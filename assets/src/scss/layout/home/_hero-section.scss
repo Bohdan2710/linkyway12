@@ -40,12 +40,11 @@
     @include _375 {
       font-size: 4rem;
     }
-
-    @include _600 {
-      font-size: 4rem;
-    }
-    @include _1280 {
+    @include _968{
       font-size: 6rem;
+    }
+    @include _1280{
+      font-size: 7rem;
     }
     span {
       display: inline-block;
