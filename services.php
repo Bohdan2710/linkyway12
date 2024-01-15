@@ -4,7 +4,7 @@ TempLate name: Services
 */
 get_header();
 ?>
-<main class="services">
+<div class="services">
   <?php
     get_template_part('templates/services/hero-section');
     get_template_part('templates/services/affect-section');
@@ -19,5 +19,5 @@ get_header();
     get_template_part('templates/faq');
   ?>
   <?php get_template_part( 'pages/button-top');?>
-</main>
+</div>
 <?php get_footer(); ?>
