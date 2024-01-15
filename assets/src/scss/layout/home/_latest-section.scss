@@ -1,0 +1,78 @@
+.latest {
+
+  &__title {
+    text-align: center;
+    margin: 0 0 3rem;
+    @include _1280{
+      margin: 0 0 6.8rem;
+    }
+    span{
+      padding: .7rem 1.2rem;
+    }
+  }
+
+  &__block_latest {
+    max-width: 41.3rem;
+    margin: 0 auto;
+    background-color: $secondary-color;
+    border-radius: 2rem;
+    overflow: hidden;
+  }
+
+  &__slider{
+    @include _968{
+      padding: 0 5rem;
+    }
+    @include _1440{
+      padding: 0 8rem;
+    }
+  }
+}
+
+.block_latest {
+  &__wrap{
+    padding: 0 3.5rem 3rem;
+    @include _1280{
+      padding: 0 3.5rem 3.3rem;
+    }
+  }
+
+  &__img {
+    margin: 0 0 3rem;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    max-height: 35.6rem;
+    @include _1280{
+      margin: 0 0 3.5rem;
+    }
+  }
+
+  &__sub {
+    display: block;
+    margin: 0 0 1rem;
+  }
+
+  &__title {
+    display: block;
+    margin: 0 0 2rem;
+    font-size: 2rem;
+    font-family: $righteous-regular;
+    line-height: normal;
+    text-transform: uppercase;
+    @include _1280{
+      font-size: 2.5rem;
+    }
+  }
+
+}
+
+.main__latest .swiper-horizontal>.swiper-pagination-progressbar{
+  max-width: 25rem;
+  margin: 5rem auto 0;
+  @include _1280{
+    max-width: 35.3rem;
+    margin: 8rem auto 0;
+  }
+}
+.main__latest .swiper-horizontal>.swiper-pagination-progressbar{
+  background-color: $secondary-color;
+}

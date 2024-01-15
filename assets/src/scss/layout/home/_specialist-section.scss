@@ -1,0 +1,126 @@
+.specialist {
+  &__span {
+    display: block;
+    text-align: center;
+    color: $secondary-color;
+    margin: 0 0 3rem;
+    @include _968 {
+      font-size: 3rem;
+    }
+    @include _1440 {
+      text-align: right;
+      font-size: 4rem;
+    }
+  }
+  &__container {
+    position: relative;
+    padding: 5rem 2rem;
+    @include _1024 {
+      padding: 8rem 4rem;
+    }
+    @include _1440 {
+      max-width: 144rem;
+      margin: 0 auto;
+    }
+    @include _1900 {
+      max-width: 192rem;
+      padding: 8rem 31rem;
+    }
+  }
+  &__astronaut {
+    display: none;
+    @include _1440 {
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      max-width: 46.4rem;
+      left: 0;
+      top: 0;
+    }
+    @include _1900 {
+      left: 10rem;
+    }
+    img {
+      width: 110%;
+    }
+  }
+
+  &__wrap {
+    max-width: 35rem;
+    margin: 0 auto;
+    @include _600 {
+      max-width: 98.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @include _1440 {
+      margin-left: auto;
+      margin-right: 0;
+      justify-content: space-between;
+    }
+  }
+
+  &__button {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    padding: 1.3rem 3.8rem;
+    text-transform: uppercase;
+    border-radius: 3.5rem;
+    font-size: 1.5rem;
+    line-height: 133.333%;
+    margin: 0 0 3rem;
+    @include hover_background_on_lightviolet;
+    @include _600 {
+      margin: 0 2rem 0 0;
+    }
+    @include _1024 {
+      font-size: 2rem;
+      line-height: 100%;
+      padding: 1.8rem 2.9rem;
+    }
+    img {
+      max-width: 2rem;
+      height: 2rem;
+      margin: 0 1.5rem 0 0;
+    }
+  }
+
+  &__info_specialist {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.info_specialist {
+  &__img {
+    width: 7.4rem;
+    height: 7.4rem;
+    border-radius: 50%;
+    margin: 0 2rem 0 0;
+    flex: 0 0 auto;
+    @include _1024 {
+      width: 9rem;
+      height: 9rem;
+      margin: 0 2.7rem 0 0;
+    }
+  }
+  &__name {
+    display: block;
+    color: $secondary-color;
+    font-size: 2rem;
+    line-height: 135%;
+    text-transform: uppercase;
+    @include _1024 {
+      margin: 0 0 0.5rem;
+    }
+  }
+
+  &__position {
+    display: block;
+    color: $secondary-color;
+    opacity: 0.4;
+  }
+}

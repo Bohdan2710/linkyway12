@@ -1,0 +1,158 @@
+.reviews {
+  &__title {
+    text-align: center;
+    margin: 0 0 3.5rem;
+    @include _1280{
+      margin: 0 0 7rem;
+    }
+    span{
+      max-width: 13.5rem;
+      margin: 0 auto;
+      display: block;
+      @include _480{
+        max-width: 100%;
+        display: inline-block;
+        margin: 0;
+      }
+    }
+  }
+  &__container{
+    max-width: 151.1rem;
+    @include _1440{
+      padding: 0 2rem;
+    }
+  }
+  &__slider{
+    position: relative;
+    @include _968{
+      padding: 0 3rem;
+    }
+    @include _1440{
+      padding: 0 6rem;
+    }
+  }
+  &__button_next,
+  &__button_prev {
+    top: 0;
+    transform: translateY(0);
+    height: 100%;
+    display: none;
+    background-color: $backround-cases;
+    border-radius: 0;
+    @include _968{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    img{
+      height: 3rem;
+      @include _1440{
+        height: 5rem;
+      }
+    }
+  }
+  &__button_prev{
+    img{
+      transform: rotate(180deg);
+    }
+  }
+
+  &__block_reviews {
+    max-width: 41.3rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: $secondary-color;
+    border: .1rem solid rgba(0, 0, 0, 0.20);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 auto;
+    @include _1440{
+      padding: 4rem;
+    }
+  }
+}
+
+.block_reviews {
+
+  &__stars {
+    max-width: 12.8rem;
+    margin: 0 0 1.6rem;
+    @include _1280{
+      max-width: 15rem;
+      margin: 0 0 2rem;
+    }
+  }
+
+  &__text {
+    margin: 0 0 2rem;
+    flex: 1 1 auto;
+    @include _1280{
+      line-height: 153.333%;
+    }
+  }
+
+  &__user_reviews {
+    display: flex;
+  }
+}
+
+.user_reviews {
+
+  &__avatar {
+    width: 7.2rem;
+    height: 7.2rem;
+    margin: 0 1.5rem 0 0;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    display: block;
+    color: $main-color;
+    @include _1280{
+      font-size: 2rem;
+    }
+  }
+
+  &__position {
+    color: #000;
+    opacity: .4;
+    display: block;
+    font-size: 1rem;
+    line-height: 130%;
+    margin: 0 0 1rem;
+  }
+
+  &__linkedIn {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 115.385%;
+    a{
+      display: inline-block;
+      text-decoration: none;
+      color: $violet;
+      margin: 0 0 0 .6rem;
+    }
+  }
+}
+
+.main__reviews .swiper-autoheight, .swiper-autoheight .swiper-slide{
+  height: inherit;
+}
+.main__reviews .swiper-autoheight .swiper-wrapper{
+  height: auto !important;
+  align-items: stretch;
+}
+
+.main__reviews .swiper-horizontal>.swiper-pagination-progressbar{
+  max-width: 25rem;
+  margin: 3rem auto 0;
+  @include _1280{
+    max-width: 35.3rem;
+    margin: 7rem auto 0;
+  }
+}
+
+.main__reviews .swiper-horizontal>.swiper-pagination-progressbar{
+  background-color: $secondary-color;
+}

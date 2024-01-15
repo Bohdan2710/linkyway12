@@ -1,0 +1,87 @@
+@import "../forms";
+
+.hero {
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &__container {
+    @include _768 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    max-width: 64rem;
+    margin: 0 auto 3rem;
+    @include _768 {
+      width: 50%;
+      text-align: left;
+      margin: 0 5rem 0 0;
+    }
+  }
+
+  &__title {
+    color: $secondary-color;
+    font-size: 2.7rem;
+    line-height: normal;
+    text-transform: uppercase;
+    font-family: $righteous-regular;
+    margin: 0 0 2.55rem;
+
+    @include _375 {
+      font-size: 4rem;
+    }
+
+    @include _600 {
+      font-size: 4rem;
+    }
+    @include _1280 {
+      font-size: 6rem;
+    }
+    span {
+      display: inline-block;
+      margin: 0.8rem 0 0;
+      @include _768 {
+        margin: 0;
+      }
+    }
+  }
+
+  &__text {
+    color: $secondary-color;
+    font-family: $geometria-regular;
+    font-size: 1.5rem;
+    line-height: 150%;
+    text-transform: uppercase;
+    max-width: 27.9rem;
+    margin: 0 auto;
+    @include _600 {
+      font-size: 1.6rem;
+    }
+    @include _768 {
+      margin: 0;
+      max-width: 100%;
+      font-family: $geometria-medium;
+    }
+    @include _1280 {
+      font-size: 2.23rem;
+    }
+  }
+
+  &__form {
+    margin: 0 auto;
+    @include _768 {
+      margin: 0;
+      width: 50%;
+    }
+  }
+}

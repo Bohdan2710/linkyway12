@@ -1,0 +1,126 @@
+body {
+  font-family: $geometria-medium;
+  color: $main-color;
+
+  &.hidden {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.main {
+  &__hero {
+    position: relative;
+    padding: 11.1rem 0 5.1rem;
+    @include _768 {
+      padding: 0;
+      height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__latest,
+  &__packages,
+  &__building,
+  &__benefit,
+  &__cases,
+  &__why {
+    padding: 5rem 0;
+    @include _1024 {
+      padding: 8rem 0;
+    }
+  }
+  &__packages {
+    background-color: $main-color;
+  }
+  &__latest,
+  &__reviews,
+  &__building,
+  &__cases {
+    background-color: $backround-cases;
+  }
+  &__services {
+    padding: 5rem 0;
+    @include _1024 {
+      padding: 8.6rem 0 8rem;
+    }
+    @include _1440 {
+      padding: 8.6rem 0 8rem;
+    }
+  }
+  &__specialist,
+  &__benefit {
+    background-color: $violet;
+  }
+  &__info {
+    padding: 3rem 0 5rem;
+    @include _1024 {
+      padding: 8rem 0;
+    }
+  }
+  &__working {
+    padding: 5rem 0;
+    @include _1024 {
+      padding: 8rem 0 6.8rem;
+    }
+  }
+  &__reviews {
+    padding: 5rem 0;
+    @include _1024 {
+      padding: 8.3rem 0 9.5rem;
+    }
+  }
+}
+
+.services {
+  &__hero_services {
+    padding: 1rem 0 0;
+  }
+}
+
+.span_title_violet,
+.span_title_white {
+  border-radius: 1rem;
+  padding: 0 1.3rem;
+
+  @include _1024 {
+    border-radius: 2rem;
+  }
+}
+.span_title_violet {
+  color: $secondary-color;
+  background-color: $violet;
+}
+.span_title_white {
+  color: $main-color;
+  background-color: $secondary-color;
+}
+.section_title {
+  text-transform: uppercase;
+  font-family: $righteous-regular;
+  line-height: 120%;
+  font-size: 2.5rem;
+  text-align: center;
+  @include _480 {
+    font-size: 2.5rem;
+  }
+  @include _600 {
+    font-size: 3rem;
+  }
+  @include _768 {
+    font-size: 3.5rem;
+    text-align: left;
+  }
+  @include _968 {
+    font-size: 4rem;
+  }
+}
+.text_grey {
+  color: $color-why;
+  font-size: 1.5rem;
+  line-height: 133.333%;
+}

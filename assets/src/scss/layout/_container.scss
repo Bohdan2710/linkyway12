@@ -1,0 +1,16 @@
+.container {
+  max-width: 100%;
+  padding: 0 2rem;
+
+  @include _768 {
+    padding: 0 4rem;
+  }
+  @include _1440 {
+    max-width: 144rem;
+    margin: 0 auto;
+  }
+  @include _1900 {
+    max-width: 192rem;
+    padding: 0 31rem;
+  }
+}

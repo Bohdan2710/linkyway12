@@ -1,0 +1,33 @@
+@import './fonts';
+
+//Media
+$pc-big:    1900px;
+$pc-medium: 1440px;
+$pc:        1280px;
+$lg-tab:    1024px;
+$tab:       968px;
+$sm-tab:    768px;
+$lg-mob:    600px;
+$mob:       480px;
+$sm-mob:    375px;
+
+//Color
+$main-color: rgba(0, 0, 0, 1);
+$secondary-color: rgba(255, 255, 255, 1);
+$violet: rgba(101, 96, 225, 1);
+$backround: rgba(1, 4, 20, 1);
+$icon-background-other: rgba(203, 203, 203, 1);
+$list-icon-why: rgb(128 128 128);
+$color-why: rgb(77, 77, 77);
+$backround-cases: rgba(247, 247, 247, 1);
+$background-progressbar: rgba(245, 245, 245, 1);
+$hover-backround-darkviolet: #4a469f;
+$hover-backround-lightviolet: #ddcaff;
+
+
+//Fonts 
+$geometria-regular: 'Geometria-Regular', serif;
+$geometria-medium: 'Geometria-Medium', serif;
+$geometria-bold: 'Geometria-Bold', serif;
+$geometria-bold-italic: 'Geometria-Bold-Italic', serif;
+$righteous-regular: 'Righteous-Regular', serif;

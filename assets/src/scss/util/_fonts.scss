@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Geometria-Regular';
+  src: url('../fonts/Geometria-Regular.eot');
+  src: local('../fonts/Geometria Regular'), local('Geometria-Regular'),
+      url('../fonts/Geometria-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Geometria-Regular.woff2') format('woff2'),
+      url('../fonts/Geometria-Regular.woff') format('woff'),
+      url('../fonts/Geometria-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Geometria-Medium';
+  src: url('../fonts/Geometria-Medium.eot');
+  src: local('../fonts/Geometria Medium'), local('Geometria-Medium'),
+      url('../fonts/Geometria-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Geometria-Medium.woff2') format('woff2'),
+      url('../fonts/Geometria-Medium.woff') format('woff'),
+      url('../fonts/Geometria-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Geometria-Bold-Italic';
+  src: url('../fonts/Geometria-BoldItalic.eot');
+  src: local('../fonts/Geometria Bold Italic'), local('Geometria-BoldItalic'),
+      url('../fonts/Geometria-BoldItalic.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Geometria-BoldItalic.woff2') format('woff2'),
+      url('../fonts/Geometria-BoldItalic.woff') format('woff'),
+      url('../fonts/Geometria-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Geometria-Bold';
+  src: url('../fonts/Geometria-Bold.eot');
+  src: local('../fonts/Geometria Bold'), local('Geometria-Bold'),
+      url('../fonts/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Geometria-Bold.woff2') format('woff2'),
+      url('../fonts/Geometria-Bold.woff') format('woff'),
+      url('../fonts/Geometria-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Righteous-Regular';
+  src: url('../fonts/Righteous-Regular.eot');
+  src: local('Righteous'), local('Righteous-Regular'),
+      url('../fonts/Righteous-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Righteous-Regular.woff2') format('woff2'),
+      url('../fonts/Righteous-Regular.woff') format('woff'),
+      url('../fonts/Righteous-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

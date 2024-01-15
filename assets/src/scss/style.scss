@@ -1,0 +1,32 @@
+@import "./util/reset";
+@import "./util/fonts";
+@import "./util/variables";
+@import "./util/mixins";
+@import "./util/swiper-slider";
+@import "./layout/buttons";
+@import "./base";
+@import "./layout/container";
+
+@import "./layout/faq";
+@import "./layout/header";
+@import "./layout/footer";
+
+@import "./layout/home/hero-section";
+@import "./layout/home/why-section";
+@import "./layout/home/cases-section";
+@import "./layout/home/services-section";
+@import "./layout/home/benefit-section";
+@import "./layout/home/info-section";
+@import "./layout/home/building-section";
+@import "./layout/home/specialist-section";
+@import "./layout/home/working-section";
+@import "./layout/home/packages-section";
+@import "./layout/home/reviews-section";
+@import "./layout/home/latest-section";
+
+
+@import "./layout/services/hero-section";
+@import "./layout/services/affect-section";
+@import "./layout/services/pr-section";
+@import "./layout/services/process-section";
+@import "./layout/services/quality-section";

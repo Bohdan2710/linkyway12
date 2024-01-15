@@ -1,0 +1,125 @@
+.faq {
+  padding: 5rem 0;
+  @include _1024 {
+    padding: 8rem 0;
+  }
+  &__title {
+    text-align: center;
+    margin: 0 0 3rem;
+    @include _1024 {
+      margin: 0 0 7rem;
+    }
+  }
+}
+.accordion-flush .accordion-item {
+  margin: 0 0 1.5rem;
+  border: none;
+  @include _1024 {
+    margin: 0 0 2rem;
+  }
+}
+
+.accordion-flush .accordion-item .accordion-button {
+  font-size: 2rem;
+  font-style: normal;
+  line-height: 150%;
+  text-transform: uppercase;
+  padding: 2.7rem 3rem;
+  border-radius: 2rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  background-color: $violet;
+  color: $secondary-color;
+  justify-content: space-between;
+
+  @include _1024 {
+    padding: 3.1rem 4rem;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+  &::after {
+    display: none;
+  }
+
+  &:hover {
+    z-index: 1;
+  }
+
+  &.collapsed {
+    border-radius: 2rem;
+    color: $main-color;
+    background-color: $secondary-color;
+  }
+  &-icon {
+    flex: 0 0 auto;
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 0.3rem solid rgba(255, 255, 255, 1);
+    margin: 0 0 0 1.1rem;
+
+    @include _1024 {
+      width: 3.9rem;
+      height: 3.9rem;
+      border: 0.4rem solid rgba(255, 255, 255, 1);
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      border-radius: 1rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-bottom: 0.25rem solid rgba(255, 255, 255, 1);
+      width: 70%;
+      @include _1024 {
+        border-bottom: 0.35rem solid rgba(255, 255, 255, 1);
+      }
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(-0deg);
+      transition: 0.5s transform;
+    }
+  }
+}
+
+.accordion-flush .accordion-item .accordion-button.collapsed .accordion-button {
+  &-icon {
+    position: relative;
+    border: 0.3rem solid rgba(101, 96, 225, 1);
+    @include _1024 {
+      border: 0.4rem solid rgba(101, 96, 225, 1);
+    }
+    &::after,
+    &::before {
+      border-bottom: 0.3rem solid rgba(101, 96, 225, 1);
+      @include _1024 {
+        border-bottom: 0.35rem solid rgba(101, 96, 225, 1);
+      }
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+}
+
+.accordion {
+  &-body {
+    color: $color-why;
+    font-size: 1.5rem;
+    font-style: normal;
+    line-height: 153.333%;
+    padding: 2rem 3rem;
+    @include _1024 {
+      padding: 2rem 4rem 2.3rem;
+    }
+    @include _1280 {
+      padding: 2rem 11.9rem 2.3rem 4rem;
+    }
+  }
+}

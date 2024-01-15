@@ -1,0 +1,125 @@
+.packages {
+  &__title {
+    text-align: center;
+    color: $secondary-color;
+    margin: 0 0 3rem;
+    @include _1024 {
+      margin: 0 0 6.7rem;
+    }
+    span {
+      padding: 0 1rem;
+      margin: 0 0 0 0.5rem;
+    }
+  }
+  &__form {
+    margin: 0 0 3rem;
+    @include _600 {
+      width: 50%;
+      margin: 0 2rem 0 0;
+    }
+    @include _1440 {
+      width: 53%;
+      margin: 0 3rem 0 0;
+    }
+  }
+  &__request_packages {
+    position: relative;
+    padding: 21.9rem 3rem 3rem;
+    width: 100%;
+    max-width: 35rem;
+    border-radius: 2.5rem;
+    border: 0.1rem solid #fff;
+    @include _600 {
+      width: 50%;
+      height: fit-content;
+    }
+    @include _1024 {
+      border-radius: 5rem;
+      padding: 17rem 5rem 5rem;
+      height: auto;
+      max-width: 58rem;
+    }
+  }
+  &__wrap {
+    @include _600 {
+      display: flex;
+    }
+  }
+}
+
+.request_packages {
+  &__title {
+    display: block;
+    width: fit-content;
+    position: relative;
+    span {
+      margin: 0 0 1rem;
+      position: relative;
+      display: block;
+      font-size: 2rem;
+      color: #fff;
+      font-family: $righteous-regular;
+      line-height: normal;
+      text-transform: uppercase;
+      max-width: 17.5rem;
+      z-index: 2;
+      @include _1024 {
+        font-size: 2.5rem;
+      }
+    }
+    @include _600 {
+      width: auto;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 50%;
+    top: 1rem;
+    right: 1rem;
+    max-width: 25rem;
+    max-height: 23.6rem;
+    @include _1024 {
+      max-width: 30rem;
+      max-height: 30rem;
+    }
+  }
+
+  &__sum {
+    display: block;
+    color: #6560e1;
+    font-family: $geometria-bold;
+    font-size: 3rem;
+    line-height: 133.333%;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem;
+    @include _1024 {
+      font-size: 4rem;
+      line-height: 125%;
+      margin: 0 0 3rem;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin: 0 0 2.5rem;
+    max-width: 37.8rem;
+    @include _1024 {
+      font-size: 2rem;
+      line-height: 130%;
+      margin: 0 0 5rem;
+    }
+  }
+
+  &__button {
+    white-space: nowrap;
+    display: block;
+    text-decoration: none;
+    padding: 1.3rem;
+    max-width: 33.2rem;
+    @include hover_background_on_darkviolet;
+    @include _1024 {
+      padding: 1.8rem 0;
+    }
+  }
+}

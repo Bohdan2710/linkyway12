@@ -1,0 +1,141 @@
+.services {
+  &__title {
+    margin: 0 0 3rem;
+    text-align: center;
+    @include _968{
+      margin: 0 0 7.7rem;
+    }
+  }
+
+  &__container{
+    @include _1900{
+      padding: 0 20.5rem;
+    }
+  }
+
+  &__slider{
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: .2rem;
+      background-color: $secondary-color;
+      z-index: 2;
+    }
+  }
+
+  &__block_services {
+    text-align: center;
+    max-width: 26.4rem;
+    margin: 0 auto;
+  }
+}
+
+.block_services {
+  &__wrap {
+    &_icon {
+      width: 5rem;
+      height: 5.2rem;
+      background-color: $violet;
+      border-radius: 1rem;
+      padding: 1.6rem 1rem;
+      margin: 0 auto 3rem;
+      @include _968{
+        width: 8rem;
+        height: 8rem;
+        border-radius: 1.5rem;
+        padding: 2.1rem 1.2rem;
+      }
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin: 0 0 2rem;
+    text-align: center;
+    @include _968{
+      font-size: 2.5rem;
+      margin: 0 0 1.5rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    line-height: 133.333%;
+    margin: 0 0 2.5rem;
+    color: $color-why;
+    @include _968{
+      margin: 0 0 1.7rem;
+    }
+  }
+
+  &__link {
+    margin: 0 auto;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  background-color: transparent;
+  margin-top: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  @include _1440{
+    width: 5rem;
+    height: 5rem;
+    top: 40%;
+  }
+}
+.swiper-button-prev {
+  left: 0;
+  transform: translateY(-50%) rotate(-180deg);
+}
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-pagination {
+  width: 100%;
+  margin: 0 auto;
+  bottom: -4.6rem;
+  max-width: 35rem;
+  border-radius: 5rem;
+  overflow: hidden;
+}
+.swiper-horizontal > .swiper-pagination-progressbar {
+  position: relative;
+  height: 0.5rem;
+  background-color: $background-progressbar;
+  margin: 4.6rem auto 0;
+
+  @include _1024 {
+    height: 0.8rem;
+  }
+  @include _1440{
+    margin: 10.9rem auto 0;
+  }
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  display: block;
+  border-radius: 5rem;
+  background-color: $violet;
+}
+.main__services .swiper-slide{
+  height: 100%;
+}
+.main__services .swiper-slide{
+  @include _1440{
+    &:not(:last-child){
+      border-right: .2rem solid rgba(0, 0, 0, 0.10);
+    }
+  }
+}

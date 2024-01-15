@@ -1,0 +1,84 @@
+.info {
+  &__title {
+    margin: 0 0 3rem;
+    @include _1024 {
+      margin: 0 0 5rem;
+    }
+  }
+
+  &__text {
+    margin: 0 0 2rem;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include _768 {
+      width: calc(calc(100% - 3rem) / 2);
+    }
+
+    @include _1280 {
+      line-height: 153.333%;
+    }
+
+    &.mob {
+      @include _768 {
+        display: none;
+      }
+    }
+  }
+
+  &__all_text {
+    background-color: $secondary-color;
+    padding: 5rem 9rem 3rem 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    color: $secondary-color;
+    opacity: 0;
+    overflow-y: auto;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s, visibility 0.3s, pointer-events 0.3s;
+
+    @include _768 {
+      position: inherit;
+      background-color: transparent;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      color: $main-color;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 1rem;
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  &__read_more {
+    @include _768 {
+      display: none;
+    }
+  }
+}
+.all_text {
+  &_close {
+    display: block;
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+    @include _768 {
+      display: none;
+    }
+  }
+}

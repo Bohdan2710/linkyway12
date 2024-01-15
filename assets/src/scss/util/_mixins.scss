@@ -1,0 +1,109 @@
+@import './variables';
+
+
+@mixin _1900{
+  @media (min-width: $pc-big){
+      @content;
+  }
+}
+@mixin _1440{
+  @media (min-width: $pc-medium){
+      @content;
+  }
+}
+@mixin _1280{
+  @media (min-width: $pc){
+      @content;
+  }
+}
+@mixin _1024{
+  @media (min-width: $lg-tab){
+      @content;
+  }
+}
+@mixin _968{
+  @media (min-width: $tab){
+      @content;
+  }
+}
+@mixin _768{
+  @media (min-width: $sm-tab){
+      @content;
+  }
+}
+@mixin _600{
+  @media (min-width: $lg-mob){
+      @content;
+  }
+}
+@mixin _480{
+  @media (min-width: $mob){
+      @content;
+  }
+}
+@mixin _375{
+  @media (min-width: $sm-mob){
+      @content;
+  }
+}
+
+@mixin hover_background_on_white{
+  transition: background-color .3s;
+  body.pc &:hover{
+    background-color: $secondary-color;
+    @content;
+  }
+  body.pc &:focus{
+    background-color: $secondary-color;
+    @content;
+  }
+  body.mobile &:active{
+    background-color: $secondary-color;
+    @content;
+  }
+}
+@mixin hover_background_on_darkviolet{
+  transition: background-color .3s;
+  body.pc &:hover{
+    background-color: $hover-backround-darkviolet;
+    @content;
+  }
+  body.pc &:focus{
+    background-color: $hover-backround-darkviolet;
+    @content;
+  }
+  body.mobile &:active{
+    background-color: $hover-backround-darkviolet;
+    @content;
+  }
+}
+@mixin hover_background_on_lightviolet{
+  transition: background-color .3s;
+  body.pc &:hover{
+    background-color: $hover-backround-lightviolet;
+    @content;
+  }
+  body.pc &:focus{
+    background-color: $hover-backround-lightviolet;
+    @content;
+  }
+  body.mobile &:active{
+    background-color: $hover-backround-lightviolet;
+    @content;
+  }
+}
+@mixin hover_color_on_violet{
+  transition: color .3s;
+  body.pc &:hover{
+    color: $violet;
+    @content;
+  }
+  body.pc &:focus{
+    color: $violet;
+    @content;
+  }
+  body.mobile &:active{
+    color: $violet;
+    @content;
+  }
+}

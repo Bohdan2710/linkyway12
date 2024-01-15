@@ -1,0 +1,269 @@
+.form_booking_data {
+  background-color: $secondary-color;
+  border-radius: 3.5rem;
+  width: 100%;
+  max-width: 53.7rem;
+  padding: 2rem;
+  &__wrap {
+    position: relative;
+    label {
+      font-family: $geometria-regular;
+      position: absolute;
+      top: 50%;
+      left: 1.3rem;
+      transform: translateY(-50%);
+      width: 100%;
+      max-width: 0.85rem;
+      height: 1rem;
+
+      img {
+        object-fit: contain;
+      }
+
+      @include _768 {
+        left: 2rem;
+        max-width: 1.4rem;
+        height: 1.6rem;
+      }
+    }
+    input {
+      width: 100%;
+      border-radius: 4.5rem;
+      border: 0.1rem solid rgba(0, 0, 0, 0.2);
+      background-color: $secondary-color;
+      padding: 0.8rem 1rem 0.7rem 3.4rem;
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      line-height: 153.846%;
+      color: $main-color;
+      font-family: $geometria-regular;
+      cursor: pointer;
+      &:last-child {
+        margin: 0 0 1.5rem;
+      }
+      &:focus {
+        cursor: auto;
+        border: 0.1rem solid black;
+        box-shadow: none;
+        &::placeholder {
+          opacity: 0.8;
+        }
+      }
+      &::placeholder {
+        opacity: 0.4;
+      }
+      @include _768 {
+        font-size: 1.3rem;
+        padding: 1rem 1rem 1rem 5.4rem;
+      }
+      @include _1024 {
+        padding: 1.5rem 1.5rem 1.5rem 5.4rem;
+      }
+    }
+  }
+  &__title {
+    display: block;
+    text-align: center;
+    margin: 0 0 1.6rem;
+    font-size: 2rem;
+    font-family: $righteous-regular;
+    text-transform: uppercase;
+    line-height: 4.3rem;
+    @include _480 {
+      font-size: 3.5rem;
+      margin: 0 0 2.1rem;
+    }
+  }
+  .form-check {
+    margin: 0 0 2rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    .form-check-input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0.7rem 0 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      float: none;
+      border-radius: 0.3rem;
+      cursor: pointer;
+      &:focus {
+        box-shadow: none;
+        border-color: $violet;
+      }
+      &:checked {
+        background-color: $violet;
+        border-color: $violet;
+      }
+      &:checked[type="checkbox"] {
+        --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m4 11 4 4 9-9'/%3e%3c/svg%3e");
+        @include _768 {
+          --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+        }
+      }
+
+      @include _768 {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin: 0 1rem 0 0;
+        border-radius: 0.5rem;
+      }
+    }
+    label {
+      color: rgb(100, 100, 102);
+      font-family: $geometria-regular;
+      font-size: 0.7rem;
+      line-height: 1.4rem;
+      cursor: pointer;
+      @include _768 {
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+      }
+      span {
+        color: $violet;
+      }
+    }
+  }
+  button {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0.8rem 0 0.7rem;
+    @include hover_background_on_darkviolet;
+    @include _768 {
+      padding: 1.3rem 0;
+      font-size: 2rem;
+    }
+  }
+}
+
+.packages {
+  &__label_wrap {
+    margin: 0 0 1.5rem;
+    @include _1440 {
+      display: flex;
+      align-items: center;
+      margin: 0 0 3rem;
+    }
+  }
+  .form {
+    &-label {
+      color: $secondary-color;
+      font-size: 1.5rem;
+      line-height: 133.333%;
+      margin: 0 0 1rem;
+      @include _1024 {
+        font-size: 2rem;
+        line-height: 150%;
+      }
+      @include _1440 {
+        margin: 0;
+        width: 55%;
+      }
+      span {
+        display: block;
+        color: #fff;
+        font-size: 1rem;
+        color: $color-why;
+        line-height: 130%;
+        margin: 0.5rem 0 1rem;
+        @include _1024 {
+          font-size: 1.4rem;
+          line-height: 214.286%;
+          margin: 0;
+        }
+      }
+    }
+    &-select,
+    &-control {
+      position: relative;
+      color: $secondary-color;
+      padding: 1.3rem 2rem;
+      border-radius: 3.5rem;
+      background-color: transparent;
+      --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3e%3cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+      background-position: right 2rem center;
+      cursor: pointer;
+      @include _1024 {
+        font-size: 2rem;
+        line-height: 100%;
+        padding: 1.8rem 2rem;
+      }
+      @include _1440 {
+        background-position: right 2.4rem center;
+      }
+      &.none_arrow {
+        --bs-form-select-bg-img: none;
+      }
+
+      &:focus {
+        cursor: auto;
+        box-shadow: none;
+        border-color: $violet;
+      }
+    }
+  }
+  &__commission {
+    display: block;
+    margin: 0 0 2.5rem;
+    @include _1024 {
+      font-size: 2rem;
+      line-height: 130%;
+      margin: 0 0 3rem;
+    }
+  }
+  &__total {
+    color: $secondary-color;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    text-align: left;
+    border-radius: 5rem;
+    @include _1024 {
+      font-size: 2rem;
+      line-height: 150%;
+    }
+  }
+  &__wrap_buttons {
+    @include _480 {
+      display: flex;
+    }
+    button {
+      padding: 1.3rem;
+      width: 100%;
+      @include hover_background_on_darkviolet;
+      @include _1024 {
+        padding: 1.8rem 1.3rem;
+      }
+      &:first-child {
+        margin: 0 0 1.5rem;
+        @include _480 {
+          margin: 0 1rem 0 0;
+        }
+        @include _1440 {
+          margin: 0 2.6rem 0 0;
+        }
+      }
+    }
+  }
+}
+.total {
+  &__sum {
+    display: inline-block;
+    background-color: $violet;
+    width: 100%;
+    height: 100%;
+    max-width: 10.3rem;
+    padding: 1.3rem 0;
+    text-align: center;
+    border-radius: 5rem;
+    margin: 0 0 0 2.5rem;
+    @include _1024 {
+      max-width: 14.2rem;
+    }
+  }
+}
