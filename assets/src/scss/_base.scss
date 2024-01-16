@@ -110,6 +110,21 @@ body {
   }
 }
 
+.cases {
+  &__hero_cases {
+    display: block;
+    position: relative;
+    background-color: $main-color;
+    padding: 11.1rem 0 5.1rem;
+    @include _968{
+      padding: 19rem 0 10rem;
+    }
+    @include _1280{
+      padding: 22rem 0 10rem;
+    }
+  }
+}
+
 .span_title_violet,
 .span_title_white {
   border-radius: 1rem;
