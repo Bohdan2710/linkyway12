@@ -28,7 +28,7 @@ function linky_way_scripts() {
   // swiper js
 	wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), null, true );
   // app.js
-	wp_enqueue_script( 'app-js', get_template_directory_uri() . '/assets/dist/js/app.js', array('jquery'), null, true );
+	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/dist/js/app.js', array('jquery'), time(), true );
 }
 
 function register_widget_areas() {
