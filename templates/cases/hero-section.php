@@ -2,7 +2,7 @@
   <div class="hero_cases__container container">
     <div class="hero_cases__wrap">
       <div class="hero_cases__content">
-        <h1 class="hero_cases__title section_title"><span class="span_title_violet">Game</span>development niche: Growing organic traffic X15</h1>
+        <h2 class="hero_cases__title section_title"><span class="span_title_violet">Game</span>development niche: Growing organic traffic X15</h2>
         <a href="#" class="hero_cases__read link_read_more">read more</a>
         <div class="hero_cases__user">
           <div class="user__wrap">

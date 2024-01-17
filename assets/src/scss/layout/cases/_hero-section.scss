@@ -38,6 +38,14 @@
     @include _1280 {
       font-size: 7rem;
     }
+
+    span{
+      display: inline-block;
+      margin: 0 .8rem 0 0;
+      @include _1280{
+        margin: 0 1.5rem 0 0;
+      }
+    }
   }
 
   &__read{
@@ -129,6 +137,7 @@
     }
     @include _1280{
       font-size: 3rem;
+      margin: 0 0 5rem;
     }
   }
 

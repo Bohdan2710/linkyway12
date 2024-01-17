@@ -120,7 +120,14 @@ body {
       padding: 19rem 0 10rem;
     }
     @include _1280{
-      padding: 22rem 0 10rem;
+      padding: 23rem 0 12.3rem;
+    }
+  }
+
+  &_posts {
+    padding: 5rem 0;
+    @include _1280{
+      padding: 8rem 0;
     }
   }
 }
