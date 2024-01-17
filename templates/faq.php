@@ -68,6 +68,29 @@
           <div class="accordion-body">Backlinks play a crucial role in boosting a website's ranking in search engines. They not only increase the site's authority and trustworthiness but also enhance its visibility in search results. Thanks to backlinks, a website gains additional traffic, attracts new visitors, and improves the chances of successful online promotion and business growth.</div>
         </div>
       </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="flush-headingSeven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+            How much does Link Building Cost?
+            <div class="accordion-button-icon"></div>
+          </button>
+        </h3>
+        <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">The cost of link building can vary widely depending on several factors, including the quality of the links, the industry, and the specific strategies employed. It is very important to keep in mind that the higher the performance of a domain, the higher its value. Also, the trust of the domain and its theme has a significant impact on the price. Also, the cost of link building usually includes the work of the outreach specialist and the copywriter (if it is needed).</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h3 class="accordion-header" id="flush-headingEight">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+            What indicators should donors have for good growth?
+            <div class="accordion-button-icon"></div>
+          </button>
+        </h3>
+        <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">It's important to look at the donor holistically and pay attention to all the "red flags". First of all, for growth, you need the most thematic donors, preferably those that rank for the same anchors as your site. Secondly, you need to look at the basic parameters of the donor: it must grow, have positive trends in growth, and not link to spam sites. Lastly, it is desirable to find hard-to-reach donors that do not place backlinks and try to get links from them. The Linkyway team has many connections with such donors.
+</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
