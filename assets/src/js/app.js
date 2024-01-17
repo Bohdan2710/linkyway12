@@ -108,3 +108,78 @@ const sliderSectionLatest = new Swiper(".latest__slider", {
     prevEl: ".reviews__button_prev",
   },
 });
+
+const sliderButtonsPackages = new Swiper(".packages__wrap_buttons", {
+  slidesPerView: 1,
+  loop: true,
+  spaceBetween: 26,
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+
+//calculator packages
+
+$(document).ready(function () {
+  // Функция для обновления суммы
+  function updateTotalSum() {
+    const valueOptionNiche = $('select[name="niche"] option:selected').val();
+    const valueOptionLanguage = $('select[name="language"] option:selected').val();
+    const valueOptionCountry = $('select[name="country"] option:selected').val();
+    const valueQuantity = $('input[name="quantity"]').val();
+
+    if ((valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && valueOptionLanguage === "English" && valueOptionCountry === "USA") {
+      $(".total__sum").text(`$${valueQuantity * 100}`);
+    } else if (!(valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && valueOptionLanguage === "English" && valueOptionCountry === "USA") {
+      $(".total__sum").text(`$${valueQuantity * 180}`);
+    } else if (!(valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && valueOptionLanguage === "Ukrainian" && valueOptionCountry === "Ukraine") {
+      $(".total__sum").text(`$${valueQuantity * 20}`);
+    } else if ((valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && valueOptionLanguage === "Ukrainian" && valueOptionCountry === "Ukraine") {
+      $(".total__sum").text(`$${valueQuantity * 50}`);
+    } else if (!(valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && (valueOptionLanguage === "French" || valueOptionLanguage === "German" || valueOptionLanguage === "Other")) {
+      $(".total__sum").text(`$${valueQuantity * 180}`);
+    } else if ((valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && (valueOptionLanguage === "French" || valueOptionLanguage === "German" || valueOptionLanguage === "Other")) {
+      $(".total__sum").text(`$${valueQuantity * 220}`);
+    } else {
+      $(".total__sum").text(`$-`);
+    }
+  }
+
+  // Вызов функции при изменении значений в форме
+  $('select[name="niche"], select[name="language"], select[name="country"], input[name="quantity"]').on('change', updateTotalSum);
+
+  // Инициализация при загрузке страницы
+  updateTotalSum();
+});
+
+$(".packages__price").hide();
+$(".packages__complex").hide();
+
+$(".crowd").on("click", function(e){
+  $(".packages__form, .packages__title, .packages__request_packages, .packages__complex").hide();
+  $(".packages__price").show();
+  $(".complex, .outreach, .packages__wrap_price").removeClass("active");
+  $(this).addClass("active");
+});
+
+$(".complex").on("click", function(e){
+  $(".packages__form, .packages__title, .packages__request_packages, .packages__price").hide();
+  $(".packages__complex").show();
+  $(".crowd, .outreach, .packages__wrap_price").removeClass("active");
+  $(this).addClass("active");
+});
+
+$(".outreach").on("click", function(e){
+  $(".packages__price, .packages__complex").hide();
+  $(".packages__form, .packages__title, .packages__request_packages").show();
+  $(".crowd, .complex").removeClass("active");
+  $(this).addClass("active");
+  $(".packages__wrap_price").addClass("active");
+});

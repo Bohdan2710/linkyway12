@@ -229,24 +229,44 @@
     }
   }
   &__wrap_buttons {
-    @include _480 {
-      display: flex;
-    }
+    max-width: 69rem;
+    padding: 0 6rem;
     button {
+      display: block;
+      margin: 0 auto;
+      max-width: 27.7rem;
       padding: 1.3rem;
+      font-size: 1.6rem;
       width: 100%;
+      transition: background-color .3s, color .3s;
       @include hover_background_on_darkviolet;
       @include _1024 {
         padding: 1.8rem 1.3rem;
       }
-      &:first-child {
-        margin: 0 0 1.5rem;
-        @include _480 {
-          margin: 0 1rem 0 0;
-        }
-        @include _1440 {
-          margin: 0 2.6rem 0 0;
-        }
+      @include _1280{
+        font-size: 2rem;
+      }
+
+      &.active{
+        background-color: $violet;
+        color: $secondary-color;
+        border: none;
+      }
+    }
+    .swiper-button-next{
+      right: -.5rem;
+    }
+    .swiper-button-prev{
+      left: -.5rem;
+    }
+    .services__button{
+      width: 5rem;
+      height: 120%;
+      background-color: $main-color;
+      border-radius: 0;
+      img{
+        width: 3rem;
+        height: 3rem;
       }
     }
   }
