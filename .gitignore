@@ -15,5 +15,6 @@ vendor/
 assets/dist/
 bower_components/
 node_modules/
+img
 
 _RESSOURCES/
