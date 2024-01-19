@@ -132,6 +132,33 @@ body {
   }
 }
 
+.cases_result {
+  &__peculiarities {
+    background-color: $backround-cases;
+  }
+  &__result,
+  &__peculiarities,
+  &__kevuru{
+    padding: 5rem 0;
+    @include _1280{
+      padding: 8rem 0;
+    }
+  }
+
+  &__hero_cases_result {
+    display: block;
+    position: relative;
+    background-color: $main-color;
+    padding: 11.1rem 0 5.1rem;
+    @include _968{
+      padding: 19rem 0 10rem;
+    }
+    @include _1280{
+      padding: 26rem 0 13rem;
+    }
+  }
+}
+
 .span_title_violet,
 .span_title_white {
   border-radius: 1rem;
