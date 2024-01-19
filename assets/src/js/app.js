@@ -131,25 +131,45 @@ $(document).ready(function () {
   // Функция для обновления суммы
   function updateTotalSum() {
     const valueOptionNiche = $('select[name="niche"] option:selected').val();
-    const valueOptionLanguage = $('select[name="language"] option:selected').val();
-    const valueOptionCountry = $('select[name="country"] option:selected').val();
-    const valueQuantity = $('input[name="quantity"]').val();
-
-    if ((valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && valueOptionLanguage === "English" && valueOptionCountry === "USA") {
-      $(".total__sum").text(`$${valueQuantity * 100}`);
-    } else if (!(valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && valueOptionLanguage === "English" && valueOptionCountry === "USA") {
-      $(".total__sum").text(`$${valueQuantity * 180}`);
-    } else if (!(valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && valueOptionLanguage === "Ukrainian" && valueOptionCountry === "Ukraine") {
-      $(".total__sum").text(`$${valueQuantity * 20}`);
-    } else if ((valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && valueOptionLanguage === "Ukrainian" && valueOptionCountry === "Ukraine") {
-      $(".total__sum").text(`$${valueQuantity * 50}`);
-    } else if (!(valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && (valueOptionLanguage === "French" || valueOptionLanguage === "German" || valueOptionLanguage === "Other")) {
-      $(".total__sum").text(`$${valueQuantity * 180}`);
-    } else if ((valueOptionNiche === "Adult" || valueOptionNiche === "Essay" || valueOptionNiche === "Gambling/betting" || valueOptionNiche === "Crypto") && (valueOptionLanguage === "French" || valueOptionLanguage === "German" || valueOptionLanguage === "Other")) {
-      $(".total__sum").text(`$${valueQuantity * 220}`);
+          valueOptionLanguage = $('select[name="language"] option:selected').val(),
+          valueOptionCountry = $('select[name="country"] option:selected').val(),
+          valueQuantity = $('input[name="quantity"]').val(),
+          totalText = $(".total__sum"),
+          approximatePrice = $(".request_packages__sum"),
+    
+          nicheOptions = ["Adult", "Essay", "Gambling/betting", "Crypto"],
+          isNicheValid = nicheOptions.includes(valueOptionNiche);
+          let total = 0;
+    
+    if (isNicheValid && valueOptionLanguage === "English" && valueOptionCountry === "USA") {
+      total = valueQuantity * 100;
+      totalText.text(`$${total}`);
+      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+    } else if (!isNicheValid && valueOptionLanguage === "English" && valueOptionCountry === "USA") {
+      total = valueQuantity * 180;
+      totalText.text(`$${total}`);
+      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+    } else if (!isNicheValid && valueOptionLanguage === "Ukrainian" && valueOptionCountry === "Ukraine") {
+      total = valueQuantity * 20;
+      totalText.text(`$${total}`);
+      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+    } else if (isNicheValid && valueOptionLanguage === "Ukrainian" && valueOptionCountry === "Ukraine") {
+      total = valueQuantity * 50;
+      totalText.text(`$${total}`);
+      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+    } else if (!isNicheValid && (valueOptionLanguage === "French" || valueOptionLanguage === "German" || valueOptionLanguage === "Other" || valueOptionLanguage === "English")) {
+      total = valueQuantity * 130;
+      totalText.text(`$${total}`);
+      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+    } else if (isNicheValid && (valueOptionLanguage === "French" || valueOptionLanguage === "German" || valueOptionLanguage === "Other" || valueOptionLanguage === "English")) {
+      total = valueQuantity * 180;
+      totalText.text(`$${total}`);
+      approximatePrice.text(`$${valueQuantity * 35 * total}`);
     } else {
-      $(".total__sum").text(`$-`);
+      totalText.text(`$-`);
+      approximatePrice.text(`$-`);
     }
+
   }
 
   // Вызов функции при изменении значений в форме
