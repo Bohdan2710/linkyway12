@@ -13,7 +13,7 @@ get_header();
     get_template_part('templates/services/process-section');
   ?>
   <?php 
-    get_template_part('templates/main/packages-section');
+    get_template_part('templates/services/packages-section');
     get_template_part('templates/main/reviews-section');
     get_template_part('templates/main/specialist-section');
     get_template_part('templates/faq');
