@@ -244,6 +244,9 @@
         padding: 1.8rem 1.3rem;
       }
       @include _1280{
+        font-size: 1.8rem;
+      }
+      @include _1440{
         font-size: 2rem;
       }
 
