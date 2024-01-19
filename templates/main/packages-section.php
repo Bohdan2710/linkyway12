@@ -78,7 +78,6 @@
               <h3 class="block_price__name_package section_title">pro</h3>
               <span class="block_price__sum">120$ <span>/20 links</span></span>
               <ul class="block_price__list">
-                <span class="block_price__list_title"><span>&#128279;</span>20 links per month</span>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/list-package-white.svg" alt="img-icon">$5 per link</li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/list-package-white.svg" alt="img-icon">Compliance with the requirements</li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/list-package-white.svg" alt="img-icon">Uniqueness of the sites</li>
@@ -89,10 +88,9 @@
               <button class="block_price__btn button_violet">contact us</button>
             </div>
             <div class="price__block_price">
-              <h3 class="block_price__name_package section_title">Pro</h3>
+              <h3 class="block_price__name_package section_title">Growth</h3>
               <span class="block_price__sum">225$ <span>/50 links</span></span>
               <ul class="block_price__list">
-                <span class="block_price__list_title"><span>&#128279;</span>20 links per month</span>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/list-package-violet.svg" alt="img-icon">$4.5 per link</li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/list-package-violet.svg" alt="img-icon">Compliance with the requirements</li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/list-package-violet.svg" alt="img-icon">Speed up indexing</li>
@@ -102,10 +100,9 @@
               <button class="block_price__btn button_violet">contact us</button>
             </div>
             <div class="price__block_price">
-              <h3 class="block_price__name_package section_title">unlimited</h3>
-              <span class="block_price__sum">Custom</span>
+              <h3 class="block_price__name_package section_title">Custom</h3>
+              <span class="block_price__sum">unlimited</span>
               <ul class="block_price__list">
-                <span class="block_price__list_title"><span>&#128279;</span>20 links per month</span>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/list-package-violet.svg" alt="img-icon">Compliance with the requirements</li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/list-package-violet.svg" alt="img-icon">Speed up indexing</li>
                 <li><img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/list-package-violet.svg" alt="img-icon">Reports</li>
@@ -192,7 +189,7 @@
             approximate price
           </span>
         </span>
-        <span class="request_packages__sum">$589</span>
+        <span class="request_packages__sum"></span>
         <span class="request_packages__text text_grey">The displayed result is an average. If you want to know the exact prices of the sites for your requirements. Leave a request for discussion.</span>
         <a href="#" class="request_packages__button button_violet">Leave a request</a>
       </div>
