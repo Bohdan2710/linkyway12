@@ -12,6 +12,6 @@ get_header();
   <?php 
     get_template_part('templates/main/specialist-section');
   ?>
-  <?php get_template_part( 'pages/button-top');?>
+  <?php get_template_part( 'templates/button-top');?>
 </div>
 <?php get_footer(); ?>

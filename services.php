@@ -18,6 +18,6 @@ get_header();
     get_template_part('templates/main/specialist-section');
     get_template_part('templates/faq');
   ?>
-  <?php get_template_part( 'pages/button-top');?>
+  <?php get_template_part( 'templates/button-top');?>
 </div>
 <?php get_footer(); ?>
