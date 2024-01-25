@@ -10,7 +10,7 @@
 @import "./layout/faq";
 @import "./layout/header";
 @import "./layout/footer";
-
+//home
 @import "./layout/home/hero-section";
 @import "./layout/home/why-section";
 @import "./layout/home/cases-section";
@@ -23,18 +23,22 @@
 @import "./layout/home/packages-section";
 @import "./layout/home/reviews-section";
 @import "./layout/home/latest-section";
-
-
+@import "./layout/home/industries-section";
+//services
 @import "./layout/services/hero-section";
 @import "./layout/services/affect-section";
 @import "./layout/services/pr-section";
 @import "./layout/services/process-section";
 @import "./layout/services/quality-section";
-
+//cases
 @import "./layout/cases/hero-section";
 @import "./layout/cases/posts-section";
-
+//cases-result
 @import "./layout/cases-result/hero-section";
 @import "./layout/cases-result/kevuru-section";
 @import "./layout/cases-result/peculiarities-section";
 @import "./layout/cases-result/results-section";
+//industry
+@import "./layout/industry/hero-section";
+@import "./layout/industry/backlink-packages-section";
+@import "./layout/industry/what-makes-section";
