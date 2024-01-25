@@ -159,6 +159,29 @@ body {
   }
 }
 
+.industry {
+
+  &__hero_industry {
+    display: block;
+    position: relative;
+    background-color: $main-color;
+    padding: 11.1rem 0 5.1rem;
+    @include _968{
+      padding: 19rem 0 6.4rem;
+    }
+    @include _1280{
+      padding: 20.6rem 0 6.4rem;
+    }
+  }
+  &__makes,
+  &__packages{
+    padding: 5rem 0;
+    @include _1280{
+      padding: 8rem 0;
+    }
+  }
+}
+
 .span_title_violet,
 .span_title_white {
   border-radius: 1rem;
