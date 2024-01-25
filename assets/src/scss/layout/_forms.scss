@@ -136,6 +136,10 @@
       padding: 1.3rem 0;
       font-size: 2rem;
     }
+
+    &:disabled{
+      opacity: .4;
+    }
   }
 }
 
