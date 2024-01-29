@@ -15,7 +15,7 @@ get_header();
       get_template_part( 'templates/main/reviews-section');
       get_template_part( 'templates/main/benefit-section');
       get_template_part( 'templates/main/industries-section');
-      get_template_part( 'templates/main/info-section');
+      // get_template_part( 'templates/main/info-section');
       get_template_part( 'templates/main/building-section');
       get_template_part( 'templates/main/specialist-section');
       get_template_part( 'templates/faq');
