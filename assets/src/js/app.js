@@ -20,6 +20,23 @@ $(window).scroll(function () {
   }
 });
 
+$('.sub-menu').hide(); 
+//dropdown menu header
+$(function() { // Dropdown toggle
+  $('.menu-item-has-children a').click(function(e){
+    e.preventDefault();
+    $(this).next('.sub-menu').toggle();
+  });
+
+  $(document).click(function(e) {
+    e.preventDefault();
+    var target = e.target;
+    if (!$(target).is('.menu-item-has-children a') && !$(target).parents().is('.menu-item-has-children a')) {
+      $('.sub-menu').hide(); 
+    }
+  });
+});
+
 // button scroll to top
 $(window).scroll(function () {
   if ($(this).scrollTop() > 500) {
@@ -124,9 +141,14 @@ const sliderButtonsPackages = new Swiper(".packages__wrap_buttons", {
   },
 });
 
+$(".hero__form button").removeAttr("disabled");
+if(!$(".hero__form #invalidCheck2").is(':checked')) { 
+    $(".hero__form button").attr("disabled", "disabled");
+} else {
+  $(".hero__form button").removeAttr("disabled");
+}
 
 //calculator packages
-
 $(document).ready(function () {
   // Функция для обновления суммы
   function updateTotalSum() {
@@ -142,29 +164,29 @@ $(document).ready(function () {
           let total = 0;
     
     if (isNicheValid && valueOptionLanguage === "English" && valueOptionCountry === "USA") {
-      total = valueQuantity * 100;
-      totalText.text(`$${total}`);
-      approximatePrice.text(`$${valueQuantity * 35 * total}`);
-    } else if (!isNicheValid && valueOptionLanguage === "English" && valueOptionCountry === "USA") {
       total = valueQuantity * 180;
       totalText.text(`$${total}`);
-      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+      approximatePrice.text(`$${valueQuantity * 35 + total}`);
+    } else if (!isNicheValid && valueOptionLanguage === "English" && valueOptionCountry === "USA") {
+      total = valueQuantity * 100;
+      totalText.text(`$${total}`);
+      approximatePrice.text(`$${valueQuantity * 35 + total}`);
     } else if (!isNicheValid && valueOptionLanguage === "Ukrainian" && valueOptionCountry === "Ukraine") {
       total = valueQuantity * 20;
       totalText.text(`$${total}`);
-      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+      approximatePrice.text(`$${valueQuantity * 35 + total}`);
     } else if (isNicheValid && valueOptionLanguage === "Ukrainian" && valueOptionCountry === "Ukraine") {
       total = valueQuantity * 50;
       totalText.text(`$${total}`);
-      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+      approximatePrice.text(`$${valueQuantity * 35 + total}`);
     } else if (!isNicheValid && (valueOptionLanguage === "French" || valueOptionLanguage === "German" || valueOptionLanguage === "Other" || valueOptionLanguage === "English")) {
       total = valueQuantity * 130;
       totalText.text(`$${total}`);
-      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+      approximatePrice.text(`$${valueQuantity * 35 + total}`);
     } else if (isNicheValid && (valueOptionLanguage === "French" || valueOptionLanguage === "German" || valueOptionLanguage === "Other" || valueOptionLanguage === "English")) {
       total = valueQuantity * 180;
       totalText.text(`$${total}`);
-      approximatePrice.text(`$${valueQuantity * 35 * total}`);
+      approximatePrice.text(`$${valueQuantity * 35 + total}`);
     } else {
       totalText.text(`$-`);
       approximatePrice.text(`$-`);
@@ -177,29 +199,4 @@ $(document).ready(function () {
 
   // Инициализация при загрузке страницы
   updateTotalSum();
-});
-
-$(".packages__price").hide();
-$(".packages__complex").hide();
-
-$(".crowd").on("click", function(e){
-  $(".packages__form, .packages__title, .packages__request_packages, .packages__complex").hide();
-  $(".packages__price").show();
-  $(".complex, .outreach, .packages__wrap_price").removeClass("active");
-  $(this).addClass("active");
-});
-
-$(".complex").on("click", function(e){
-  $(".packages__form, .packages__title, .packages__request_packages, .packages__price").hide();
-  $(".packages__complex").show();
-  $(".crowd, .outreach, .packages__wrap_price").removeClass("active");
-  $(this).addClass("active");
-});
-
-$(".outreach").on("click", function(e){
-  $(".packages__price, .packages__complex").hide();
-  $(".packages__form, .packages__title, .packages__request_packages").show();
-  $(".crowd, .complex").removeClass("active");
-  $(this).addClass("active");
-  $(".packages__wrap_price").addClass("active");
 });

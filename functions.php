@@ -4,6 +4,23 @@
 add_action( 'wp_enqueue_scripts', 'linky_way_scripts' );
 //виджет для футера
 add_action( 'widgets_init', 'register_widget_areas' );
+//подключаю скриты в отдельной странице "hero page, services crowd"
+function custom_script_for_specific_page() {
+  $hero_page = get_page_by_title('Main');
+  $services_crowd_page = get_page_by_title('Crowd Marketing');
+  $services_marketing = get_page_by_title('Online Reputation Management Services');
+
+  if ($hero_page) {
+      wp_enqueue_script('script-hero', get_template_directory_uri() . '/assets/dist/js/packages.js', array('jquery'), time(), true);
+  }
+  if ($services_crowd_page) {
+    wp_enqueue_script('script-services-crowd', get_template_directory_uri() . '/assets/dist/js/packages.js', array('jquery'), time(), true);
+  }
+  if ($services_marketing) {
+    wp_enqueue_script('script-services-marketing', get_template_directory_uri() . '/assets/dist/js/packages-serivces-marketing.js', array('jquery'), time(), true);
+  }
+}
+add_action('wp_enqueue_scripts', 'custom_script_for_specific_page');
 //постоянное изменение версии
 function linky_way_scripts() {
   //style.css add them
@@ -71,3 +88,16 @@ include( 'configure/acf.php' );
 if(is_admin()) {
 	include( 'configure/admin.php' );
 }
+
+
+function linky_way_menus() {
+  // собираем несколько зон (областей) меню
+  $locations = array(
+    'header' => __( 'Header Menu', 'linky_way'),
+    'footer' => __( 'Footer Menu', 'linky_way' ),
+  );
+    // регистрируем обралисти меню, которые лежат в переменной $locations
+    register_nav_menus( $locations );
+}
+// хук-событие
+add_action( 'init', 'linky_way_menus' );
