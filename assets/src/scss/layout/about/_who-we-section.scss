@@ -1,0 +1,55 @@
+.who_we {
+
+  &__container {
+    @include _768{
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__block {
+    &:not(:last-child){
+      margin: 0 0 3rem;
+      @include _768{
+        margin: 0 2rem 0 0;
+        padding: 0 2rem 0 0;
+      }
+      @include _1280{
+        border-right: .2rem solid rgba(0, 0, 0, 0.10);
+        margin: 0 5rem 0 0;
+        padding: 0 5rem 0 0;
+      }
+      @include _1440{
+        margin: 0 8rem 0 0;
+        padding: 0 8rem 0 0;
+      }
+    }
+  }
+
+  &__img {
+    background-color: $violet;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 2rem;
+    border-radius: 1.5rem;
+    padding: 1.1rem;
+    @include _1280{
+      width: 8rem;
+      height: 8rem;
+      margin: 0 auto 3.5rem;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 1.5rem;
+    @include _1280{
+      font-size: 2.5rem;
+    }
+  }
+
+  &__text {
+    text-align: center;
+  }
+}

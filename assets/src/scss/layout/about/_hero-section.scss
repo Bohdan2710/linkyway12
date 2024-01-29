@@ -1,0 +1,112 @@
+.hero_about {
+
+  &__btn {
+    max-width: 33.2rem;
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    padding: 1.3rem;
+    font-size: 1.6rem;
+    line-height: 100%;
+    @include hover_background_on_darkviolet;
+    @include _1024 {
+      font-size: 2rem;
+      padding: 1.8rem;
+    }
+    @include _1280 {
+      flex: 0 0 auto;
+    }
+
+    &:first-child {
+      margin: 0 0 1rem;
+      @include _1280 {
+        margin: 0 2.6rem 0 0;
+      }
+    }
+  }
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include _600 {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include _1900{
+      padding: 0 26.9rem 0 31rem;
+    }
+  }
+
+  &__content{
+    margin: 0 0 3rem;
+    max-width: 62.3rem;
+    @include _600{
+      margin: 0 3rem 0 0;
+      text-align: left;
+      width: 60%;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    color: $secondary-color;
+    font-size: 2.7rem;
+    line-height: normal;
+    text-transform: uppercase;
+    font-family: $righteous-regular;
+    margin: 0 0 2rem;
+
+    @include _375 {
+      font-size: 4rem;
+    }
+
+    @include _600 {
+      font-size: 4rem;
+    }
+    @include _1024 {
+      font-size: 6rem;
+      margin: 0 0 3.5rem;
+    }
+    @include _1280 {
+      font-size: 7rem;
+    }
+
+    span {
+      @include _600{
+        margin: 0 0.5rem 0 0;
+      }
+      @include _1280 {
+        margin: 0 1rem 0 0;
+      }
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    line-height: 133%;
+    color: $secondary-color;
+    margin: 0 0 3rem;
+    @include _1024 {
+      font-size: 2.2rem;
+      line-height: 150%;
+    }
+    @include _1280{
+      margin: 0 0 7rem;
+    }
+  }
+
+  &__img {
+    max-width: 30rem;
+    @include _600{
+      flex: 0 0 auto;
+      width: 45%;
+    }
+    @include _768{
+      max-width: 42.8rem;
+      width: 50%;
+    }
+  }
+
+}

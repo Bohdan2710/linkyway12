@@ -23,6 +23,7 @@ body {
       justify-content: center;
     }
   }
+  &__industries,
   &__latest,
   &__packages,
   &__building,
@@ -179,6 +180,36 @@ body {
     @include _1280{
       padding: 8rem 0;
     }
+  }
+}
+
+.about{
+  &__hero_about{
+    display: block;
+    position: relative;
+    background-color: $main-color;
+    padding: 11.1rem 0 5.1rem;
+    @include _968{
+      padding: 16rem 0 5.1rem;
+    }
+    @include _1280{
+      padding: 20.1rem 0 7.4rem;
+    }
+  }
+  &__approach,
+  &__who_we{
+    padding: 5rem 0;
+    @include _1280{
+      padding: 8rem 0;
+    }
+  }
+  &__result{
+    padding: 4.5rem 0;
+    background-color: $violet;
+  }
+
+  &__approach{
+    background-color: $backround-cases;
   }
 }
 
