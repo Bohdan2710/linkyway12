@@ -1,17 +1,50 @@
+<?php
+  $crowd_title = 'crowd_title';
+  $crowd_text = 'crowd_text';
+  $crowd_link_calculate = 'crowd_link_calculate';
+  $crowd_link_order = 'crowd_link_order';
+  $crowd_image = 'crowd_image';
+?>
 <seciton class="services__hero_services">
   <div class="hero_services__container container">
     <div class="hero_services__wrap">
       <div class="hero_services__content">
-        <h1 class="hero_services__title section_title"><span class="span_title_violet">Crowd</span> Marketing</h1>
-        <p class="hero_services__text">You can order crowd links for effective promotion at the best price.
-We check the indexation and quality of links.</p>
+        <?php if( get_field($crowd_title) ): ?>
+          <h1 class="hero_services__title section_title">
+            <?php the_field($crowd_title); ?>
+          </h1>
+        <?php endif; ?>
+        <?php if( get_field($crowd_text) ): ?>
+          <p class="hero_services__text">
+            <?php the_field($crowd_text); ?>
+          </p>
+        <?php endif; ?>
         <div class="hero_services__wrap_buttons">
-          <a href="#" class="button_violet">Calculate the cost</a>
-          <a href="#" class="button_black">Order examples of sites</a>
+          <?php 
+          $link = get_field($crowd_link_calculate);
+          if( $link ): 
+              $link_url = $link['url'];
+              $link_title = $link['title'];
+              $link_target = $link['target'] ? $link['target'] : '_self';
+              ?>
+              <a class="button_violet" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+          <?php endif; ?>
+          <?php 
+          $link = get_field($crowd_link_order);
+          if( $link ): 
+              $link_url = $link['url'];
+              $link_title = $link['title'];
+              $link_target = $link['target'] ? $link['target'] : '_self';
+              ?>
+              <a class="button_black show_form_niche" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+          <?php endif; ?>
         </div>
       </div>
       <div class="hero_services__img">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/services-hero/main-serices.png" alt="img-main">
+        <?php $image = get_field($crowd_image);
+          if( !empty( $image ) ): ?>
+            <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+        <?php endif; ?>
       </div>
     </div>
   </div>

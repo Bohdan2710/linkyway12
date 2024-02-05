@@ -1,20 +1,59 @@
+<?php
+  $main_working_title = 'main_working_title';
+
+  $main_working_block_1_title = 'main_working_block_1_title';
+  $main_working_block_1_text = 'main_working_block_1_text';
+
+  $main_working_img_1 = 'main_working_img_1';
+
+  $main_working_block_2_title = 'main_working_block_2_title';
+  $main_working_block_2_text = 'main_working_block_2_text';
+
+  $main_working_img_2 = 'main_working_img_2';
+
+  $main_working_block_3_title = 'main_working_block_3_title';
+  $main_working_block_3_text = 'main_working_block_3_text';
+
+  $main_working_img_3 = 'main_working_img_3';
+?>
 <section class="main__working">
   <div class="container">
-    <h2 class="working__title section_title">Stages of working <span class="span_title_violet">with us</span></h2>
+    <?php if( get_field($main_working_title) ): ?>
+      <h2 class="working__title section_title">
+        <?php the_field($main_working_title); ?>
+      </h2>
+    <?php endif; ?>
     <div class="working__wrap">
       <div class="working__block_working">
         <div class="block_working__text">
-          <h3>development of strategies</h3>
-          <p class="text_grey">Our team works with you to develop the most appropriate link building strategy.</p>
-          <p class="text_grey">We offer strategy development based on analysis of your competitors and market trends. This way we can choose the most accurate and effective ways to develop your business.</p>
+        <?php if( get_field($main_working_block_1_title) ): ?>
+          <h3>
+            <?php the_field($main_working_block_1_title); ?>
+          </h3>
+        <?php endif; ?>
+        <?php if( get_field($main_working_block_1_text) ): ?>
+          <p class="text_grey">
+            <?php the_field($main_working_block_1_text); ?>
+          </p>
+        <?php endif; ?>
         </div>
         <div class="block_working__img first scale">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/working/astronaut_working_1.png" alt="img-astronaut">
+          <?php $image = get_field($main_working_img_1);
+            if( !empty( $image ) ): ?>
+            <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+          <?php endif; ?>
         </div>
         <div class="block_working__text">
-          <h3>Results</h3>
-          <p class="text_grey">At the end of each period we provide you with a progress report. We always track our progress and offer you new ideas and ways to achieve your goals.</p>
-          <p class="text_grey margin_bottom">SEO promotion of your website is a rather long and painstaking process, but thanks to high-quality Link building this process can be accelerated and made many times more effective.</p>
+          <?php if( get_field($main_working_block_2_title) ): ?>
+            <h3>
+              <?php the_field($main_working_block_2_title); ?>
+            </h3>
+          <?php endif; ?>
+          <?php if( get_field($main_working_block_2_text) ): ?>
+            <p class="text_grey">
+              <?php the_field($main_working_block_2_text); ?>
+            </p>
+          <?php endif; ?>
         </div>
       </div>
       <div class="block_working__steps_working">
@@ -26,15 +65,28 @@
       </div>
       <div class="working__block_working">
         <div class="block_working__img second">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/working/astronaut_working_2.png" alt="img-astronaut">
+          <?php $image = get_field($main_working_img_2);
+            if( !empty( $image ) ): ?>
+            <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+          <?php endif; ?>
         </div>
         <div class="block_working__text flex">
-          <h3>Outreach</h3>
-          <p class="text_grey ">The next step is to take your wishes into account and start searching for the most suitable sites. We select only high-quality and live sites that meet your requirements. We are also looking for thematic and live platforms for crowd hosting.</p>
-            <p class="text_grey margin_bottom">Our team of copywriters writes feature articles that fit the theme of your site and the theme of the donor. We monitor absolutely all links to ensure they are alive and indexed.</p>
+          <?php if( get_field($main_working_block_3_title) ): ?>
+            <h3>
+              <?php the_field($main_working_block_3_title); ?>
+            </h3>
+          <?php endif; ?>
+          <?php if( get_field($main_working_block_3_text) ): ?>
+            <p class="text_grey">
+              <?php the_field($main_working_block_3_text); ?>
+            </p>
+          <?php endif; ?>
         </div>
         <div class="block_working__img third">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/working/astronaut_working_3.png" alt="img-astronaut">
+          <?php $image = get_field($main_working_img_3);
+            if( !empty( $image ) ): ?>
+            <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+          <?php endif; ?>
         </div>
       </div>
     </div>

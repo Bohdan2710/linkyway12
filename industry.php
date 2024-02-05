@@ -11,9 +11,12 @@ get_header();
     get_template_part('templates/industry/what-makes-section');
   ?>
   <?php 
-    get_template_part('templates/main/specialist-section');
-    get_template_part( 'templates/main/reviews-section');
+    get_template_part('templates/specialist-section');
+    get_template_part( 'templates/reviews-section');
+    get_template_part('templates/modal-form-packages');
+    get_template_part('templates/modal-form-niche');
   ?>
   <?php get_template_part( 'templates/button-top');?>
+  <?php get_template_part( 'templates/preloader');?>
 </div>
 <?php get_footer(); ?>

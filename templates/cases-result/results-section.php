@@ -1,43 +1,82 @@
+<?php 
+  $cases_results_title = 'cases_results_title';
+  $cases_results_links_title = 'cases_results_links_title';
+  $cases_results_links = 'cases_results_links';
+  $cases_results_links_images = 'cases_results_links_images';
+  $cases_results_links_images_text = 'cases_results_links_images_text';
+  $cases_results_images = 'cases_results_images';
+?>
 <section class="cases_result__result">
   <div class="container">
     <div class="result__placements">
       <div class="placements__wrap">
-        <h2 class="placements__title section_title"><span class="span_title_violet">results</span></h2>
-        <span class="placements__span section_title">Examples of placements:</span>
+        <?php if( get_field($cases_results_title) ): ?>
+          <h2 class="placements__title section_title">
+            <?php the_field($cases_results_title); ?>
+          </h2>
+        <?php endif; ?>
+        <?php if( get_field($cases_results_links_title) ): ?>
+          <span class="placements__span section_title">
+            <?php the_field($cases_results_links_title); ?>
+          </span>
+        <?php endif; ?>
         <div class="block_result__list_placements">
-          <ul>
-            <li><a class="text_grey" href="https://pollthepeople.app/a-comprehensive-exploration-of-ai-driven-user-experience-design-in-games/">https://pollthepeople.app/a-comprehensive-exploration-of-ai-driven-user-experience-design-in-games/</a></li>
-            <li><a class="text_grey" href="https://blog.powr.io/e-commerce-evolution-3d-game-animation-for-consumer-interaction">https://blog.powr.io/e-commerce-evolution-3d-game-animation-for-consumer-interaction</a></li>
-            <li><a class="text_grey" href="https://www.jootoor.com/illustration-impact/">https://www.jootoor.com/illustration-impact/</a></li>
-          </ul>
+          <?php if (have_rows($cases_results_links)) : ?>
+            <?php while (have_rows($cases_results_links)) : the_row(); 
+              $link = 'link';
+            ?>
+              <ul>
+                <li>
+                  <?php $link = get_sub_field($link);
+                    if( $link ): 
+                        $link_url = $link['url'];
+                        $link_title = $link['title'];
+                        $link_target = $link['target'] ? $link['target'] : '_self';
+                        ?>
+                    <a class="text_grey" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                  <?php endif; ?>
+                </li>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </div>
       </div>
       <div class="placements__wrap">
         <div class="placements__img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/cases-result-results/1.jpg" alt="img-graphic">
+          <?php $image = get_field($cases_results_links_images);
+            if( !empty( $image ) ): ?>
+            <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+            <?php endif; ?>
         </div>
-        <span class="placements__info result_info_text">Growth of Reffering Domains from 114 to 1951</span>
+        <?php if( get_field($cases_results_links_images_text) ): ?>
+          <span class="placements__info result_info_text">
+            <?php the_field($cases_results_links_images_text); ?>
+          </span>
+        <?php endif; ?>
       </div>
     </div>
-      
     <div class="result__graphics_result">
       <div class="graphics_result__wrap">
-        <div class="graphics_result__img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/cases-result-results/2.jpg" alt="img-graphic">
-        </div>
-        <div class="graphics_result__img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/cases-result-results/3.jpg" alt="img-graphic">
-        </div>
-        <span class="graphics_result__info result_info_text">Traffic growth from 1842 to 26780 visits per month</span>
-      </div>
-      <div class="graphics_result__wrap">
-        <div class="graphics_result__img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/cases-result-results/4.jpg" alt="img-graphic">
-        </div>
-        <div class="graphics_result__img">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/cases-result-results/5.jpg" alt="img-graphic">
-        </div>
-        <span class="graphics_result__info padding result_info_text">DR (Domain Rating) growth from 23 to 52</span>
+        <?php if (have_rows($cases_results_images)) : ?>
+          <?php while (have_rows($cases_results_images)) : the_row(); 
+            $image = 'image';
+            $whith_text = 'whith_text';
+            $text = 'text';
+          ?>
+            <div class="graphics_result__img">
+              <?php if( !empty(get_sub_field($image)) ): ?>
+                  <img src="<?php echo get_sub_field($image)['url']; ?>" alt="<?php echo get_sub_field($image)['alt']; ?>" />
+              <?php endif; ?>
+
+              <?php if (get_sub_field($whith_text)) : ?>
+                <?php if (get_sub_field($text)) : ?>
+                  <span class="graphics_result__info padding result_info_text">
+                    <?php the_sub_field($text) ?>
+                  </span>
+                <?php endif; ?>
+              <?php endif; ?>
+            </div>
+          <?php endwhile; ?>
+        <?php endif; ?>
       </div>
     </div>
   </div>

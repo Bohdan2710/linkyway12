@@ -1,6 +1,7 @@
 <?php
 /*
 TempLate name: Cases Result
+TempLate Post Type: post, pages
 */
 get_header();
 ?>
@@ -12,8 +13,10 @@ get_header();
     get_template_part('templates/cases-result/results-section');
   ?>
   <?php 
-    get_template_part('templates/main/specialist-section');
+    get_template_part('templates/specialist-section');
+    get_template_part('templates/modal-form-packages');
   ?>
   <?php get_template_part( 'templates/button-top');?>
+  <?php get_template_part( 'templates/preloader');?>
 </div>
 <?php get_footer(); ?>

@@ -1,42 +1,96 @@
+<?php
+  $main_why_title = 'main_why_title';
+  $main_why_text = 'main_why_text';
+  $main_why_span = 'main_why_span';
+
+  $main_why_list_other_image = 'main_why_list_other_image';
+  $main_why_list_other_title = 'main_why_list_other_title';
+  $main_why_list_other = 'main_why_list_other';
+
+  $main_why_list_we_image = 'main_why_list_we_image';
+  $main_why_list_we_title = 'main_why_list_we_title';
+  $main_why_list_we = 'main_why_list_we';
+?>
+
 <section class="main__why">
   <div class="why__container container">
     <div class="why__content">
-      <h2 class="why__title section_title">Why do your business<br> need <span class="span_title_violet">Linkyway</span><br> Link Building?</h2>
-      <p class="why__text text_grey">What sets Linkyway apart from other companies?</p>
-      <span class="why__span">Cooperation with us will make your company successful!</span>
+      <?php if( get_field($main_why_title) ): ?>
+        <h2 class="why__title section_title">
+          <?php the_field($main_why_title); ?>
+        </h2>
+      <?php endif; ?>
+      <?php if( get_field($main_why_text) ): ?>
+        <p class="why__text text_grey">
+          <?php the_field($main_why_text); ?>
+        </p>
+      <?php endif; ?>
+      <?php if( get_field($main_why_span) ): ?>
+        <span class="why__span">
+          <?php the_field($main_why_span); ?>
+        </span>
+      <?php endif; ?>
     </div>
     <div class="why__wrap">
       <div class="why__other">
         <div class="other__decoration">
           <div class="other__icon">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/star.svg" alt="img-icon">
+            <?php $image = get_field($main_why_list_other_image);
+                if( !empty( $image ) ): ?>
+                  <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+            <?php endif; ?>
           </div>
           <div class="decoration__line"></div>
         </div>
         <div class="other__list">
-          <span>OTHER COMPANY</span>
+          <?php if( get_field($main_why_list_other_title) ): ?>
+            <span>
+              <?php the_field($main_why_list_other_title); ?>
+            </span>
+          <?php endif; ?>
           <ul>
-            <li>They don’t bother with selecting quality donors.</li>
-            <li>They have experience in only a few niches.</li>
-            <li>Posted backlinks are not monitored.</li>
-            <li>They cannot help you with your link building strategy and anchor plan.</li>
+            <?php if (have_rows("main_why_list_other")) : ?>
+              <?php while (have_rows("main_why_list_other")) : the_row(); 
+                $text = 'text';
+              ?>
+                  <li>
+                    <?php if (get_sub_field($text)) : ?>
+                        <?php the_sub_field($text) ?>
+                    <?php endif; ?>
+                  </li>
+              <?php endwhile; ?>
+            <?php endif; ?>
           </ul>
         </div>
       </div>
       <div class="why__we">
         <div class="we__decoration">
           <div class="we__icon">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/linkyway_icon.svg" alt="img-icon">
+            <?php $image = get_field($main_why_list_we_image);
+              if( !empty( $image ) ): ?>
+                <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+            <?php endif; ?>
           </div>
           <div class="decoration__line"></div>
         </div>
         <div class="we__list">
-          <span>WE</span>
+          <?php if( get_field($main_why_list_we_title) ): ?>
+            <span>
+              <?php the_field($main_why_list_we_title); ?>
+            </span>
+          <?php endif; ?>
           <ul>
-            <li>We carefully select donors of the best quality (based on multiple criteria) and make sure that they are indexed and bring value to the site. We also use a lot of creative outreach techniques to find sites that other companies can't locate on.</li>
-            <li>We have experience in many niches and can prove it with a considerable number of successful cases in these niches.</li>
-            <li>We monitor all links provided and can guarantee to return a link to the site or return your money.</li>
-            <li>We can do an SEO analysis of your website and give you all the necessary advice for promotion.</li>
+            <?php if (have_rows("main_why_list_we")) : ?>
+              <?php while (have_rows("main_why_list_we")) : the_row(); 
+                $text = 'text';
+              ?>
+                <li>
+                  <?php if (get_sub_field($text)) : ?>
+                      <?php the_sub_field($text) ?>
+                  <?php endif; ?>
+                </li>
+              <?php endwhile; ?>
+            <?php endif; ?>
           </ul>
         </div>
       </div>

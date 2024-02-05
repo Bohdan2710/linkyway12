@@ -1,19 +1,47 @@
+<?php
+  $cases_posts_hero_main_title = 'cases_posts_hero_main_title';
+  $cases_posts_hero_main_text = 'cases_posts_hero_main_text';
+  $cases_posts_hero_result = 'cases_posts_hero_result';
+?>
 <seciton class="cases_result__hero_cases_result">
   <div class="hero_cases_result__container container">
     <div class="hero_cases_result__wrap">
       <div class="hero_cases_result__content">
-        <h2 class="hero_cases_result__title section_title"><span class="span_title_violet">Game</span>development niche: Growing organic traffic X15</h2>
+
+        <?php if( get_field($cases_posts_hero_main_title) ): ?>
+          <h2 class="hero_cases_result__title section_title">
+            <?php the_field($cases_posts_hero_main_title, ); ?>
+          </h2>
+        <?php endif; ?>
+        <?php if( get_field($cases_posts_hero_main_text)): ?>
+          <span class="result__text">
+            <?php the_field($cases_posts_hero_main_text); ?>
+          </span>
+        <?php endif; ?>
+
       </div>
-      <div class="hero_cases_result__results">
-        <div class="result__block">
-         <span class="result__number section_title">27513+</span>
-         <span class="result__text">visits per month</span>
+      <?php if (have_rows($cases_posts_hero_result)) : ?>
+        <div class="hero_cases_result__results">
+          <?php while (have_rows($cases_posts_hero_result)) : the_row(); 
+            $title = 'title';
+            $text = 'text';
+          ?>
+          <div class="result__block">
+            <?php if (get_sub_field($title)) : ?>
+              <span class="result__number section_title">
+                <?php the_sub_field($title) ?>
+              </span>
+            <?php endif; ?>
+
+            <?php if (get_sub_field($text)) : ?>
+                <span class="result__text">
+                  <?php the_sub_field($text) ?>
+              </span>
+            <?php endif; ?>
+          </div>
+          <?php endwhile; ?>
         </div>
-        <div class="result__block">
-          <span class="result__number section_title">900+</span>
-          <span class="result__text">organic outreach placements</span>
-        </div>
-      </div>
+      <?php endif; ?>
     </div>
   </div>
 </seciton>

@@ -1,18 +1,51 @@
+
+<?php
+$crowd_process_image = 'crowd_process_image';
+$crowd_process_title = 'crowd_process_title';
+$crowd_process_text = 'crowd_process_text';
+$crowd_process_link = 'crowd_process_link';
+?>
 <section class="services__process">
   <div class="process__container container">
     <div class="process__wrap">
       <div class="process__content">
-        <h2 class="process__title section_title">Our advantages in <span class="span_title_violet">crowd</span> link building</h2>
+      <?php if( get_field($crowd_process_title) ): ?>
+        <h2 class="process__title section_title">
+          <?php the_field($crowd_process_title); ?>
+        </h2>
+      <?php endif; ?>
         <ul class="process__list text_grey">
-          <li><span class="list_number">1.</span>We select sites that fully meet your criteria.</li>
-          <li><span class="list_number">2.</span>We make sure that the sites are canonical and open to indexing.</li>
-          <li><span class="list_number">3.</span>We use our tools for indexing links.</li>
-          <li><span class="list_number">4.</span>We guarantee free replacement of removed links.</li>
+
+        <?php if (have_rows($crowd_process_text)) : ?>
+          <?php while (have_rows($crowd_process_text)) : the_row(); 
+            $text = 'text';
+          ?>
+            <?php if (get_sub_field($text)) : ?>
+              <li>
+                <span class="list_number"><?php echo get_row_index(); ?></span>
+                <?php the_sub_field($text) ?>
+              </li>
+            <?php endif; ?>
+          <?php endwhile; ?>
+        <?php endif; ?>
+          
         </ul>
-        <a href="#" class="process__btn button_violet">Order examples</a>
+
+        <?php 
+        $link = get_field($crowd_process_link);
+        if( $link ): 
+            $link_url = $link['url'];
+            $link_title = $link['title'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+            ?>
+            <a class="process__btn button_violet show_form_niche" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+        <?php endif; ?>
       </div>
       <div class="process__img">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/services-process/process.png" alt="img-process">
+        <?php $image = get_field($crowd_process_image);
+          if( !empty( $image ) ): ?>
+            <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+        <?php endif; ?>
       </div>
     </div>
   </div>

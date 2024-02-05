@@ -10,8 +10,9 @@ get_header();
     get_template_part('templates/cases/posts-section');
   ?>
   <?php 
-    get_template_part('templates/main/specialist-section');
+    get_template_part('templates/specialist-section');
   ?>
   <?php get_template_part( 'templates/button-top');?>
+  <?php get_template_part( 'templates/preloader');?>
 </div>
 <?php get_footer(); ?>

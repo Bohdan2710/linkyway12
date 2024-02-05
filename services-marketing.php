@@ -14,10 +14,12 @@ get_header();
   ?>
   <?php 
     get_template_part('templates/services-marketing/packages-section');
-    get_template_part('templates/main/reviews-section');
-    get_template_part('templates/main/specialist-section');
+    get_template_part('templates/reviews-section');
+    get_template_part('templates/specialist-section');
     get_template_part('templates/faq');
+    get_template_part('templates/modal-form-packages');
   ?>
   <?php get_template_part( 'templates/button-top');?>
+  <?php get_template_part( 'templates/preloader');?>
 </div>
 <?php get_footer(); ?>

@@ -5,27 +5,33 @@
   <div class="result__container container">
     <div class="result__list">
       <ul>
-        <li>
-          <span class="result__list_sum section_title">100+</span>
-          <div class="result__list_wrap">
-            <span class="result__list_title section_title">Loren ipsum</span>
-            <span class="result__list_text">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</span>
-          </div>
-        </li>
-        <li>
-          <span class="result__list_sum section_title">100+</span>
-          <div class="result__list_wrap">
-            <span class="result__list_title section_title">Loren ipsum</span>
-            <span class="result__list_text">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</span>
-          </div>
-        </li>
-        <li class="margin">
-          <span class="result__list_sum section_title">100+</span>
-          <div class="result__list_wrap">
-            <span class="result__list_title section_title">Loren ipsum</span>
-            <span class="result__list_text">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</span>
-          </div>
-        </li>
+        <?php if (have_rows("about_result_block")) : ?>
+          <?php while (have_rows("about_result_block")) : the_row(); 
+            $sum = 'sum';
+            $title = 'title';
+            $text = 'text';
+          ?>
+            <li>
+              <?php if (get_sub_field($sum)) : ?>
+                <span class="result__list_sum section_title">
+                  <?php the_sub_field($sum)?>+
+                </span>
+              <?php endif; ?>
+              <div class="result__list_wrap">
+                <?php if (get_sub_field($title)) : ?>
+                  <span class="result__list_title section_title">
+                    <?php the_sub_field($title) ?>
+                  </span>
+                <?php endif; ?>
+                <?php if (get_sub_field($text)) : ?>
+                  <span class="result__list_text">
+                    <?php the_sub_field($text) ?>
+                  </span>
+                <?php endif; ?>
+              </div>
+            </li>
+          <?php endwhile; ?>
+        <?php endif; ?>
       </ul>
     </div>
     <div class="result__img">

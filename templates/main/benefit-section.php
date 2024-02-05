@@ -1,27 +1,42 @@
+<?php
+  $main_benefit_title = 'main_benefit_title';
+  $main_benefit_bocks = 'main_benefit_bocks';
+?>
+
 <section class="main__benefit">
   <div class="container">
-    <h2 class="benefit__title section_title">Why you don't <span class="span_title_white">benefit</span> from in-house link building</h2>
+    <?php if (get_field($main_benefit_title)) : ?>
+      <h2 class="benefit__title section_title">
+        <?php the_field($main_benefit_title) ?>
+      </h2>
+    <?php endif; ?>
     <div class="benefit__wrap">
-      <div class="benefit__block_binefit">
-        <div class="block_binefit__emoji">&#128105;&#127995;</div>
-        <span class="block_binefit__title">Hired staff</span>
-        <span class="block_binefit__text">$50k/year</span>
-      </div>
-      <div class="benefit__block_binefit">
-        <div class="block_binefit__emoji">&#9997;&#127995;</div>
-        <span class="block_binefit__title">Copywriting</span>
-        <span class="block_binefit__text">Constant problems</span>
-      </div>
-      <div class="benefit__block_binefit">
-        <div class="block_binefit__emoji">&#128187;</div>
-        <span class="block_binefit__title">Staff training</span>
-        <span class="block_binefit__text">Wasted time and money</span>
-      </div>
-      <div class="benefit__block_binefit">
-        <div class="block_binefit__emoji">&#9989;</div>
-        <span class="block_binefit__title">Responsibility</span>
-        <span class="block_binefit__text">You can't control everything</span>
-      </div>
+      <?php if (have_rows($main_benefit_bocks)) : ?>
+        <?php while (have_rows($main_benefit_bocks)) : the_row(); 
+          $emoji = 'emoji';
+          $title = 'title';
+          $text = 'text';
+        ?>
+            <div class="benefit__block_binefit">
+              <?php if (get_sub_field($emoji)) : ?>
+                <div class="block_binefit__emoji">
+                  <?php the_sub_field($emoji) ?>
+                </div>
+              <?php endif; ?>
+              <?php if (get_sub_field($title)) : ?>
+                <span class="block_binefit__title">
+                  <?php the_sub_field($title) ?>
+                </span>
+              <?php endif; ?>
+
+              <?php if (get_sub_field($text)) : ?>
+                <span class="block_binefit__text">
+                  <?php the_sub_field($text) ?>
+                </span>
+              <?php endif; ?>
+            </div>
+        <?php endwhile; ?>
+      <?php endif; ?>
     </div>
   </div>
 </section>

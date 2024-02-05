@@ -1,24 +1,28 @@
+<?php
+$crowd_quality_image = 'crowd_quality_image';
+$crowd_quality_title = 'crowd_quality_title';
+$crowd_quality_text = 'crowd_quality_text';
+?>
 <section class="services__quality">
   <div class="quality__container container">
     <div class="quality__wrap">
       <div class="quality__content">
-        <h2 class="quality__title section_title">How it works?</h2>
-        <div class="quality__text text_grey">
-          <p>You specify the quantity and requirements for crowd links. Either provide us with this request so that we can determine all the necessary conditions for your website.</p>
-          <br>
-          <br>
-          <p>Within the specified timeframe, we carry out placements and provide them to you for review.</p>
-          <br>
-          <br>
-          <p>If any crowd links do not satisfy you, we provide a free replacement.</p>
-          <br>
-          <br>
-          <p>Additionally, if the link disappears within six months, we offer a free replacement.</p>
-        </div>
-      </div>
-      <div class="quality__img">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/services-quality/quality.png" alt="img-quality">
-      </div>
+      <?php if( get_field($crowd_quality_title) ): ?>
+        <h2 class="quality__title section_title">
+          <?php the_field($crowd_quality_title); ?>
+        </h2>
+      <?php endif; ?>
+      <?php if( get_field($crowd_quality_text) ): ?>
+        <p class="quality__text text_grey">
+          <?php the_field($crowd_quality_text); ?>
+        </p>
+      <?php endif; ?>
+    </div>
+    <div class="quality__img">
+      <?php $image = get_field($crowd_quality_image);
+        if( !empty( $image ) ): ?>
+          <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+      <?php endif; ?>
     </div>
   </div>
 </section>

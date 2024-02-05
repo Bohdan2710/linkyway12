@@ -1,19 +1,51 @@
+
+<?php
+$outrech_process_image = 'outrech_process_image';
+$outrech_process_title = 'outrech_process_title';
+$outrech_process_text = 'outrech_process_text';
+$outrech_process_link = 'outrech_process_link';
+?>
 <section class="services__process">
   <div class="process__container container">
     <div class="process__wrap">
       <div class="process__content">
-        <h2 class="process__title section_title">Process of working with <span class="span_title_violet">outreach</span> placements</h2>
+      <?php if( get_field($outrech_process_title) ): ?>
+        <h2 class="process__title section_title">
+          <?php the_field($outrech_process_title); ?>
+        </h2>
+      <?php endif; ?>
         <ul class="process__list text_grey">
-          <li><span class="list_number">1.</span>You tell us your requirements, goals, budget and desired number of placements.</li>
-          <li><span class="list_number">2.</span>We conduct a complete analysis of your website, competitors and niche.</li>
-          <li><span class="list_number">3.</span>We provide you with examples of donors that best suit your mission. You choose those that suit you.</li>
-          <li><span class="list_number">4.</span>We write articles that fit the theme of your site, or you give us your articles.</li>
-          <li><span class="list_number">5.</span>We make placements and provide you with a report on the completed task.</li>
+
+        <?php if (have_rows($outrech_process_text)) : ?>
+        <?php while (have_rows($outrech_process_text)) : the_row(); 
+          $text = 'text';
+        ?>
+          <?php if (get_sub_field($text)) : ?>
+            <li>
+              <span class="list_number"><?php echo get_row_index(); ?></span>
+              <?php the_sub_field($text) ?>
+            </li>
+          <?php endif; ?>
+        <?php endwhile; ?>
+    <?php endif; ?>
+          
         </ul>
-        <a href="#" class="process__btn button_violet">Order examples</a>
+
+        <?php 
+        $link = get_field($outrech_process_link);
+        if( $link ): 
+            $link_url = $link['url'];
+            $link_title = $link['title'];
+            $link_target = $link['target'] ? $link['target'] : '_self';
+            ?>
+            <a class="process__btn button_violet show_form_niche" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+        <?php endif; ?>
       </div>
       <div class="process__img">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/services-process/process.png" alt="img-process">
+        <?php $image = get_field($outrech_process_image);
+          if( !empty( $image ) ): ?>
+            <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
+        <?php endif; ?>
       </div>
     </div>
   </div>
