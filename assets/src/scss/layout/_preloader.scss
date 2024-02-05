@@ -1,0 +1,44 @@
+.preloader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+  background-color: $main-color;
+  transition: .5s;
+  color: $secondary-color;
+  body.done{
+    display: none;
+  }
+  &__logo{
+    width: 10rem;
+    height: 10rem;
+    margin: 0 0 3rem;
+  }
+}
+
+
+.loader {
+  width: 3rem;
+  --b: .8rem; 
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: .1rem;
+  background: conic-gradient(#0000 10%,rgba(101, 96, 225, 1)) content-box;
+  -webkit-mask:
+    repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+    radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+  -webkit-mask-composite: destination-in;
+          mask-composite: intersect;
+  animation:l4 1s infinite steps(10);
+}
+@keyframes l4 {to{transform: rotate(1turn)}}

@@ -110,6 +110,7 @@
   }
 
   &__name {
+    text-transform: uppercase;
     color: $secondary-color;
     font-size: 1.6rem;
     line-height: 130%;
@@ -142,6 +143,8 @@
   }
 
   &__title_articles{
+    text-decoration: none;
+    display: block;
     color: $secondary-color;
     font-size: 1.5rem;
     line-height: 128%;

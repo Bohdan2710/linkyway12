@@ -1,0 +1,47 @@
+.privacy-policy {
+  &__block {
+    color: $secondary-color;
+    margin: 0 0 5rem;
+    &:last-child{
+      margin: 0;
+    }
+    h2{
+      text-align: left;
+      opacity: .8;
+      font-size: 2rem;
+      margin: 0 0 3rem;
+      @include _1024{
+        font-size: 2.5rem;
+      }
+    }
+    p{
+      opacity: .8;
+      margin: 0 0 2rem;
+      font-size: 1.5rem;
+      line-height: 133%;
+      @include _1024{
+        line-height: 153%;
+      }
+      &:last-child{
+        margin: 0;
+      }
+    }
+    ul{
+      list-style: disc;
+      padding: 0 0 0 2rem;
+      margin: 0;
+      li{
+        opacity: .8;
+        margin: 0 0 2rem;
+        font-size: 1.5rem;
+        line-height: 133%;
+        @include _1024{
+          line-height: 153%;
+        }
+        &:last-child{
+          margin: 0;
+        }
+      }
+    }
+  }
+}

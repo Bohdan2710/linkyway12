@@ -5,6 +5,16 @@
     padding: 8rem 0;
   }
 
+  &__nav_pages{
+    width: 100%;
+    @include _600{
+      width: 50%;
+    }
+    @include _1440{
+      width: 76%;
+    }
+  }
+
   &__wrap_content {
     width: 100%;
     max-width: 24.4rem;
@@ -69,7 +79,14 @@
       }
       ul {
         li {
-          margin: 0 0 2rem;
+          margin: 0 1rem 2rem 0;
+          width: calc(calc(100% - 2rem)/2);
+          @include _768{
+            width: calc(calc(100% - 6rem)/3);
+          }
+          @include _1440{
+            width: calc(calc(100% - 0rem)/4);
+          }
           @include _1280 {
             margin: 0 0 5rem;
             &:last-child {
@@ -87,15 +104,28 @@
               font-size: 2rem;
               line-height: 150%;
             }
+            @include _1900{
+              white-space: nowrap;
+            }
           }
+        }
+      }
+
+
+      .menu{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        li{
+          
         }
       }
     }
 
     &_policy {
       display: flex;
-      justify-content: space-between;
       max-width: 40rem;
+      justify-content: center;
       @include _1280 {
         max-width: 100%;
       }
@@ -103,10 +133,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        width: 44%;
-        @include _375 {
-          width: 45%;
-        }
+        width: 70%;
         @include _1280 {
           width: auto;
           align-items: center;
@@ -176,8 +203,15 @@
     a {
       display: inline-block;
       margin: 0 3.5rem 0 0;
+      transition: .3s opacity;
       &:last-child {
         margin: 0;
+      }
+      body.pc &:hover{
+        opacity: .5;
+      }
+      body.mobile &:active{
+        opacity: .5;
       }
       @include _1280 {
         margin: 0 2rem 0 0;
@@ -198,60 +232,25 @@
     font-family: $geometria-regular;
     font-size: 1.5rem;
     line-height: 166.667%;
-    padding: 2rem 0 0;
+    padding: 3rem 0 0;
   }
 }
 
 .review_footer {
-  &__fiverr,
-  &__clutch {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $secondary-color;
-    padding: 1rem 2rem;
-    text-decoration: none;
+  &__link {
+    max-width: 24.4rem;
     border-radius: 2rem;
-    @include hover_background_on_lightviolet;
+    overflow: hidden;
+    display: inline-block;
+    transition: .3s opacity;
+    body.pc &:hover{
+      opacity: .5;
+    }
+    body.mobile &:active{
+      opacity: .5;
+    }
     &:not(:last-child) {
       margin: 0 0 2rem;
-    }
-
-    span {
-      color: $color-why;
-      font-family: $geometria-regular;
-      font-size: 1rem;
-      line-height: normal;
-    }
-  }
-}
-
-.clutch {
-  &__sub {
-    display: block;
-    margin: 0 0 0.5rem;
-  }
-  &__logo {
-    img {
-      max-width: 7.2rem;
-      height: 2.1rem;
-    }
-  }
-}
-.fiverr {
-  &__logo {
-    img {
-      max-width: 7.2rem;
-    }
-  }
-}
-.clutch,
-.fiverr {
-  &__star {
-    text-align: right;
-    max-width: 6.9rem;
-    img {
-      margin: 0 0 0.9rem;
     }
   }
 }
@@ -286,6 +285,11 @@
     }
     @include _1280 {
       width: auto;
+      &:last-child{
+        &::after{
+          display: none;
+        }
+      }
     }
   }
 }

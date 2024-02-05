@@ -1,9 +1,8 @@
 .makes {
 
   &__container {
-    @include _1900{
-      padding: 0 42.5rem;
-    }
+    max-width: 107.4rem;
+    padding: 0;
   }
 
   &__title {
@@ -73,12 +72,8 @@
       width: 50%;
     }
     img{
-      &.big {
-        max-width: 29rem;
-        margin: 0 auto;
-      }
       &.large {
-        max-width: 22rem;
+        max-width: 25rem;
         margin: 0 auto;
       }
       &.small {

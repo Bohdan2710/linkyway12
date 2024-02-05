@@ -213,6 +213,47 @@ body {
   }
 }
 
+.error_page{
+  width: 100vw;
+  padding: 11.1rem 0 5.1rem;
+  background-color: $main-color;
+  color: $secondary-color;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include _968{
+    padding: 19rem 0 10rem;
+  }
+  @include _1280{
+    padding: 26rem 0 13rem;
+  }
+}
+
+.privacy-policy,
+.cookies_policy,
+.user_agreement {
+  display: block;
+  position: relative;
+  background-color: $main-color;
+  padding: 11.1rem 0 5.1rem;
+  @include _968{
+    padding: 16rem 0 5.1rem;
+  }
+  @include _1280{
+    padding: 20.1rem 0 7.4rem;
+  }
+}
+
+.cases_marketing{
+  &__kevuru{
+    padding: 5rem 0;
+    @include _1280{
+      padding: 8rem 0;
+    }
+  }
+}
+
 .span_title_violet,
 .span_title_white {
   border-radius: 1rem;
@@ -254,4 +295,14 @@ body {
   color: $color-why;
   font-size: 1.5rem;
   line-height: 133.333%;
+}
+
+.antialiased{
+  font-family: $righteous-regular;
+  .form-status-footer{
+    display: none;
+  }
+  .form-status-message{
+    text-align: center;
+  }
 }

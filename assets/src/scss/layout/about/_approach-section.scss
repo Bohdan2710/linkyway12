@@ -39,7 +39,11 @@
     ul{
       margin: 0;
       padding: 0;
-      max-width: 57.6rem;
+      @include _768{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
       &:not(:last-child){
         margin: 0 0 3rem;
         @include _768{
@@ -54,6 +58,12 @@
         &:not(:last-child){
           margin: 0 0 3rem;
         }
+        @include _768{
+          width: calc(calc(100% - 10rem)/2);
+          &:nth-child(n+5) {
+            margin: 0;
+          }
+        }
         img{
           width: 2rem;
           height: 2rem;
@@ -64,9 +74,6 @@
           }
         }
       }
-    }
-    @include _768{
-      display: flex;
     }
   }
 

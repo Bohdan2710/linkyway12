@@ -7,6 +7,7 @@
 @import "./base";
 @import "./layout/container";
 
+@import "./layout/preloader";
 @import "./layout/faq";
 @import "./layout/header";
 @import "./layout/footer";
@@ -38,6 +39,11 @@
 @import "./layout/cases-result/kevuru-section";
 @import "./layout/cases-result/peculiarities-section";
 @import "./layout/cases-result/results-section";
+//cases-organic-tarffic
+@import "./layout/cases-organic-traffic/hero-section";
+@import "./layout/cases-organic-traffic/kevuru-section";
+@import "./layout/cases-organic-traffic/peculiarities-section";
+@import "./layout/cases-organic-traffic/results-section";
 //industry
 @import "./layout/industry/hero-section";
 @import "./layout/industry/backlink-packages-section";
@@ -47,3 +53,9 @@
 @import "./layout/about/approach-section";
 @import "./layout/about/who-we-section";
 @import "./layout/about/about-result-section";
+//user-agreement
+@import "./layout/user-agreement";
+//cookies-policy
+@import "./layout/cookies-policy";
+//privacy-policy
+@import "./layout/privacy-policy";
