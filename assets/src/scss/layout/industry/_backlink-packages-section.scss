@@ -36,12 +36,12 @@
     border: .1rem solid rgba(0, 0, 0, 0.20);
     max-width: 41.3rem;
     height: fit-content;
-    @include _600{
+    @include _968{
       width: calc(calc(100% - 2rem)/2);
     }
     @include _1280{
       padding: 4rem;
-      width: calc(calc(100% - 3rem)/3);
+      width: calc(calc(100% - 6rem)/3);
     }
   }
 
@@ -50,8 +50,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    @include _1024{
-      padding: 0 30rem;
+    @include _1900{
+      padding: 0 28rem;
       gap: 3rem;
     }
 
@@ -60,8 +60,8 @@
       @include _768{
         padding: 5rem;
       }
-      @include _1280{
-        padding: 5rem 12rem;
+      @include _1900{
+        padding: 5rem 16rem;
       }
       .modal_title{
         width: 100%;

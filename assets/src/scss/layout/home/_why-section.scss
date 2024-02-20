@@ -89,6 +89,7 @@
     line-height: 128%;
     font-family: $geometria-bold-italic;
     text-transform: uppercase;
+    font-style: italic;
     @include _480 {
       font-size: 1.8rem;
     }

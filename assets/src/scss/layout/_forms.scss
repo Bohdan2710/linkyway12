@@ -129,7 +129,8 @@
         font-size: 1.1rem;
         line-height: 1.4rem;
       }
-      span {
+      a {
+        text-decoration: none;
         color: $violet;
       }
     }
@@ -163,6 +164,9 @@
 }
 .form_industry {
   max-width: 53.7rem;
+  .industry_niche{
+    display: none;
+  }
   &__wrap {
     position: relative;
     label {
@@ -495,10 +499,10 @@
     border: 0.1rem solid rgb(0 0 0 / 40%);
   }
   input{
-    padding: 1rem 1rem 1rem 2rem;
-    @include _1024{
-      padding: 1.5rem 1.5rem 1.5rem 3rem;
-    }
+    // padding: 1rem 1rem 1rem 2rem;
+    // @include _1024{
+    //   padding: 1.5rem 1.5rem 1.5rem 3rem;
+    // }
   }
   button{
     display: block;

@@ -29,8 +29,11 @@
 
   &__block_services {
     text-align: center;
-    max-width: 26.4rem;
+    max-width: 20.4rem;
     margin: 0 auto;
+    @include _375{
+      max-width: 26.4rem;
+    }
   }
 }
 

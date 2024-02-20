@@ -35,6 +35,8 @@
       height: auto;
     }
   }
+  &__serm,
+  &__copywriting,
   &__complex,
   &__price{
     margin: 0 0 3rem;
@@ -132,7 +134,8 @@
     }
   }
 }
-
+.serm,
+.copywriting,
 .complex,
 .price {
 
@@ -144,16 +147,23 @@
       margin: 0 0 7rem;
     }
   }
+  &__blocks_serm,
+  &__blocks_copywriting,
   &__blocks_complex,
   &__blocks_price{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1.6rem;
+    @include _968{
+      flex-wrap: nowrap;
+    }
     @include _1280{
       gap: 3rem;
     }
   }
+  &__block_serm,
+  &__block_copywriting,
   &__block_complex,
   &__block_price {
     display: flex;
@@ -165,6 +175,9 @@
     &:last-child{
       margin: 0;
     }
+    @include _968{
+      width: 30%;
+    }
     @include _1280{
       padding: 4rem 1.9rem 4rem 4rem;
     }
@@ -174,6 +187,8 @@
     }
   }
 }
+.block_serm,
+.block_copywriting,
 .block_complex,
 .block_price {
 
@@ -264,12 +279,16 @@
     }
   }
 }
+.serm__block_serm.violet .block_serm__btn,
 .complex__block_complex.violet .block_complex__btn,
+.copywriting__block_copywriting.violet .block_copywriting__btn,
 .price__block_price.violet .block_price__btn{
   color: $main-color;
   background-color: $secondary-color;
 }
+.serm__block_serm.violet .block_serm__list,
 .complex__block_complex.violet .block_complex__list,
+.copywriting__block_copywriting.violet .block_copywriting__list,
 .price__block_price.violet .block_price__list{
   color: #ffffffa2;
 }

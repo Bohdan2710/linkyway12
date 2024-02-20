@@ -33,8 +33,11 @@
   }
 
   &__block_binefit {
-    width: 45%;
+    width: 35%;
     position: relative;
+    @include _375 {
+      width: 45%;
+    }
     @include _768 {
       width: auto;
     }

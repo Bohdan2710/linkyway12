@@ -100,6 +100,7 @@
 .user_reviews {
 
   &__avatar {
+    flex: 0 0 auto;
     width: 7.2rem;
     height: 7.2rem;
     margin: 0 1.5rem 0 0;
@@ -128,7 +129,6 @@
     font-size: 1.3rem;
     line-height: 115.385%;
     a{
-      display: inline-block;
       text-decoration: none;
       color: $violet;
       margin: 0 0 0 .6rem;

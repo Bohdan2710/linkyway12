@@ -1,104 +1,120 @@
 .industries {
-
   &__content {
-    @include _600{
+    @include _600 {
       display: flex;
       justify-content: space-between;
     }
-    @include _1280{
+    @include _1280 {
       margin: 0 0 5.2rem;
     }
   }
 
-  &__flex{
-    @include _768{
-      display: flex;
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    @include _600 {
+      flex-direction: row;
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
-      @include _1440{
-        gap: 3rem;
-        justify-content: space-between;
-      }
+    }
+    @include _1280{
+      flex-wrap: nowrap;
+    }
+    @include _1440 {
+      gap: 3rem;
+      justify-content: space-between;
     }
   }
 
   &__title {
     text-align: left;
     margin: 0 0 3rem;
-    @include _768{
+    @include _600 {
       width: 50%;
     }
-    span{
-      margin: 0 .5rem 0 0;
+    span {
+      margin: 0 0.5rem 0 0;
     }
   }
 
-  &__img{
+  &__img {
     left: 0;
     position: absolute;
     max-width: 15rem;
     bottom: -2rem;
-    &.small{
+    &.small {
       max-width: 13rem;
     }
-    &.left.big{
+    &.left.big {
       left: -4rem;
       max-width: 20rem;
       bottom: -3rem;
       transform: rotate(23deg);
     }
-    &.right{
+    &.right {
       right: -1rem;
       left: inherit;
     }
-    &.rotate{
+    &.rotate {
       transform: rotate(17deg);
     }
   }
-  &__wrap{
-    @include _768{
+  &__wrap {
+    @include _600 {
       max-width: 37.4rem;
       flex: 0 0 auto;
-      width: 100%;
+      width: 49%;
     }
   }
 
   &__text {
-    max-width: 52.8rem;
     display: inline-block;
     margin: 0 0 3rem;
-    @include _600{
+    @include _600 {
       margin: 0;
+      width: 50%;
+      max-width: 52.8rem;
     }
-    @include _768{
+    @include _768 {
       width: 50%;
     }
   }
 
   &__block {
+    text-decoration: none;
     overflow: hidden;
     position: relative;
     border-radius: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.15);
     position: relative;
     background-color: rgba(0, 0, 0, 0.15);
-    margin: 0 0 3.1rem;
+    margin: 0 0 1rem;
     min-height: 20rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row-reverse;
-    @include _1024{
+    transition: .3s opacity;
+    @include _1024 {
       min-height: 28rem;
     }
-    &:last-child{
-      @include _768{
+    @include _1280{
+      margin: 0 0 3.1rem;
+    }
+    body.pc &:hover{
+      opacity: .6;
+    }
+    body.mobile &:active{
+      opacity: .6;
+    }
+    &:last-child {
+      @include _768 {
         margin: 0;
       }
     }
 
-    span{
+    span {
       display: block;
       color: $main-color;
       font-size: 2.5rem;
@@ -109,54 +125,63 @@
       text-decoration: none;
       position: relative;
       z-index: 3;
-      @include _1024{
+      @include _1024 {
         font-size: 3rem;
       }
     }
   }
 
   &__link {
-    svg{
+    svg {
       margin: 0 0 0 1rem;
-      width: .9rem;
+      width: 0.9rem;
       height: 1.4rem;
     }
   }
 
   &__all {
+    width: 100%;
+    order: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     margin: 0 0 3rem;
     padding: 3rem;
     border-radius: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.15);
     background-color: $main-color;
-    @include _768{
+    @include _768 {
       margin: 0;
       max-width: 49rem;
-      flex: 0 0 auto;
       width: 100%;
     }
-    @include _1024{
-      padding: 6rem 8rem;
+    @include _1280{
+      order: 0;
     }
-    a{
+    @include _1440 {
+      order: 0;
+      flex: 0 0 auto;
+    }
+    a {
       display: block;
       text-decoration: none;
       padding: 1.3rem 0;
       width: 100%;
       max-width: 33.2rem;
       margin: 0 auto;
-      transition: .3s opacity;
-      body.pc &:hover{
-        opacity: .5;
+      transition: 0.3s opacity;
+      body.pc &:hover {
+        opacity: 0.5;
       }
-      body.mobile &:active{
-        opacity: .5;
+      body.mobile &:active {
+        opacity: 0.5;
       }
-      @include _1024{
+      @include _1024 {
         padding: 1.8rem 0;
       }
     }
-    img{
+    img {
       max-width: 31rem;
       max-height: 41rem;
       margin: 0 auto;

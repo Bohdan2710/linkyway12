@@ -16,6 +16,11 @@
       @content;
   }
 }
+@mixin _1100{
+  @media (min-width: $lg-tab-2){
+      @content;
+  }
+}
 @mixin _1024{
   @media (min-width: $lg-tab){
       @content;
