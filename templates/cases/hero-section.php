@@ -3,6 +3,9 @@
   $articles_title_blocks_posts = 'articles_title_blocks_posts';
   $articles_link = 'articles_link';
   $articles_avatar_image = 'articles_avatar_image';
+  $articles_user_name = 'articles_user_name';
+  $articles_date = 'articles_date';
+  $articles_reviews = 'articles_reviews';
 ?>
 <seciton class="cases__hero_cases">
   <div class="hero_cases__container container">
@@ -33,26 +36,28 @@
                   <?php the_field($articles_main_title_post, 23); ?>
                 </h2>
               <?php endif; ?>
-
               <?php 
               $link = get_field($articles_link, 23);
               if( $link ): 
+                  $link_url = $link['url'];
                   $link_title = $link['title'];
                   $link_target = $link['target'] ? $link['target'] : '_self';
                   ?>
-                  <a class="hero_cases__read link_read_more" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo esc_html( $link_title ); ?><?php the_title('','', false); ?></a>
+                  <a class="hero_cases__read link_read_more" href="<?php echo esc_url( $link_url ); ?>" title="<?php the_title_attribute(); ?>"><?php echo esc_html( $link_title ); ?><?php the_title('','', false); ?></a>
               <?php endif; ?>
               <div class="hero_cases__user">
                 <div class="user__wrap">
-                  <span class="user__date text_grey"><?php echo get_the_date( 'j F Y'); ?></span>
-                  <div class="user__view text_grey">
-                  <?php
-                    if (function_exists('pvc_get_post_views')) {
-                        $post_views = pvc_get_post_views(get_the_ID());
-                        echo  $post_views . ' views ';
-                    }
-                  ?>
-                  </div>
+                  <?php if( get_field($articles_date, 23) ): ?>
+                    <span class="user__date text_grey">
+                      <?php the_field($articles_date, 23); ?>
+                  </span>
+                  <?php endif; ?>
+                  
+                  <?php if( get_field($articles_reviews, 23) ): ?>
+                    <div class="user__view text_grey">
+                      <?php the_field($articles_reviews, 23); ?>
+                    </div>
+                  <?php endif; ?>
                 </div>
                 <div class="user__wrap">
                   <div class="user__avatar">
@@ -61,7 +66,11 @@
                         <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
                     <?php endif; ?>
                   </div>
-                  <div class="user__name"><?php the_author(); ?></div>
+                  <?php if( get_field($articles_user_name, 23) ): ?>
+                    <div class="user__name">
+                      <?php the_field($articles_user_name, 23); ?>
+                    </div>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>

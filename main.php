@@ -18,7 +18,7 @@ get_header();
       get_template_part( 'templates/main/building-section');
       get_template_part( 'templates/specialist-section');
       get_template_part( 'templates/faq');
-      get_template_part( 'templates/main/latest-section');
+      // get_template_part( 'templates/main/latest-section');
       get_template_part('templates/modal-form-packages');
     ?>
   </main>

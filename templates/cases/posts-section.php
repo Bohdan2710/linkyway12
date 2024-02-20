@@ -1,3 +1,6 @@
+<?php
+  $cases_posts_link = "cases_posts_link";
+?>
 <div class="cases_posts">
   <div class="cases_posts__container container">
   <?php 
@@ -28,7 +31,12 @@
         <div class="cases_post__text text_grey">
           <?php the_excerpt( $post ); ?>
         </div>
-        <input class="cases_post__link link_read_more" type="checkbox">
+        <?php 
+          $link = get_sub_field($cases_posts_link);
+          $link_title = $link['title'];
+        ?>
+        <a href="<?php the_permalink(); ?>" class="cases_post__link link_read_more">READ MORE</a>
+
         <div class="cases_post__wrap">
         <span class="cases_post__date text_grey"><?php echo get_the_date( 'j F Y'); ?></span>
           <span class="cases_post__view text_grey">

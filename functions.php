@@ -16,9 +16,6 @@ function custom_script_for_specific_page() {
   if ($services_crowd_page) {
     wp_enqueue_script('script-services-crowd', get_template_directory_uri() . '/assets/dist/js/packages.js', array('jquery'), time(), true);
   }
-  if ($services_marketing) {
-    wp_enqueue_script('script-services-marketing', get_template_directory_uri() . '/assets/dist/js/packages-serivces-marketing.js', array('jquery'), time(), true);
-  }
 }
 add_action('wp_enqueue_scripts', 'custom_script_for_specific_page');
 //постоянное изменение версии
@@ -50,16 +47,65 @@ function linky_way_scripts() {
 
 function register_widget_areas() {
   register_sidebar( array(
-    'name'          => 'Footer area one',
-    'id'            => 'footer_area_one',
+    'name'          => 'Logo footer',
+    'id'            => 'logo_footer',
     'description'   => 'This widget area discription',
-    'before_widget' => '<section class="footer-area footer-area-one">',
-    'after_widget'  => '</section>',
+    'before_widget' => '<a href="https://linkyway.scandicweb.com/">',
+    'after_widget'  => '</a>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+
+  register_sidebar( array(
+    'name'          => 'first link',
+    'id'            => 'first_link',
+    'description'   => 'This widget area discription',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+
+  register_sidebar( array(
+    'name'          => 'second link',
+    'id'            => 'second_link',
+    'description'   => 'This widget area discription',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+
+  register_sidebar( array(
+    'name'          => 'menu-page',
+    'id'            => 'footer_area_2',
+    'description'   => 'This widget area discription',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+
+  register_sidebar( array(
+    'name'          => 'menu-policy',
+    'id'            => 'footer_area_3',
+    'description'   => 'This widget area discription',
+    'before_widget' => '<ul class="nav_policy_dots_mob">',
+    'after_widget'  => '</ul>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
+
+  register_sidebar( array(
+    'name'          => 'Copyright',
+    'id'            => 'copyright',
+    'description'   => 'This widget area discription',
+    'before_widget' => '',
+    'after_widget'  => '',
     'before_title'  => '<h4>',
     'after_title'   => '</h4>',
   ));
 }
-
 //кастом логотип
 add_theme_support('custom-logo');
 
@@ -101,3 +147,11 @@ function linky_way_menus() {
 }
 // хук-событие
 add_action( 'init', 'linky_way_menus' );
+
+add_filter( 'avatar_defaults', 'setnew_gravatar' );
+ 
+function setnew_gravatar ($avatar_defaults) {
+	$myavatar = 'https://linkyway.scandicweb.com/wp-content/uploads/2024/02/avatar.png';
+	$avatar_defaults[$myavatar] = "Новый аватар";
+	return $avatar_defaults;
+}

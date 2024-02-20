@@ -13,6 +13,9 @@
         <?php get_template_part( 'templates/outrech-calculator'); ?>
         <?php get_template_part( 'templates/crowd-packages'); ?>
         <?php get_template_part( 'templates/complex-link-building'); ?>
+        <?php get_template_part( 'templates/SERM'); ?>
+        <?php get_template_part( 'templates/copywriting-packages'); ?>
+        <?php get_template_part( 'templates/serm-packages'); ?>
         <div class="swiper packages__wrap_buttons">
           <div class="swiper-button-prev services__button">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/icon/button_slider.svg" alt="img-button">
@@ -26,6 +29,12 @@
             </div>
             <div class="swiper-slide">
               <button class="button_black complex">Complex Link Building</button>
+            </div>
+            <div class="swiper-slide">
+              <button class="button_black copywriting">copywriting</button>
+            </div>
+            <div class="swiper-slide">
+              <button class="button_black serm">SERM</button>
             </div>
           </div>
           <div class="swiper-button-next services__button">
